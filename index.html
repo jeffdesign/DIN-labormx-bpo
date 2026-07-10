@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labor Mexicana | BPO de Calidad</title>
+<meta name="description" content="Contención de calidad, CS1/CS2, Quality Liaison, PPAP, APQP y auditorías en México y Estados Unidos.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#152355">
 <script src="./support.js"></script>
+<script src="./config.js"></script>
+<link rel="stylesheet" href="./enhancements.css">
+<script src="./enhancements.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -63,57 +71,35 @@
         </div>
       </div>
 
-      <div style="position:relative;min-height:540px;">
-        <span style="position:absolute;top:-34px;left:-34px;width:110px;height:110px;border-radius:26px;background:#F4C81C;opacity:.9;transform:rotate(-8deg);z-index:0;"></span>
-        <span style="position:absolute;top:-40px;left:96px;width:60px;height:60px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.35);z-index:0;"></span>
+      <div class="lm-bpo-hero-visual" aria-label="Especialista de calidad de Labor Mexicana en planta">
+        <span class="lm-hero-shape lm-hero-shape-square" aria-hidden="true"></span>
+        <span class="lm-hero-shape lm-hero-shape-ring" aria-hidden="true"></span>
+        <span class="lm-hero-orbit" aria-hidden="true"></span>
 
-        <form onSubmit="{{ preventSubmit }}" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px) scale(0.98);transition:opacity .7s cubic-bezier(.16,1,.3,1) .1s,transform .7s cubic-bezier(.16,1,.3,1) .1s;position:relative;z-index:2;margin:36px 0 0 40px;background:#1E2F66;border-radius:24px;padding:36px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 70px rgba(10,16,40,0.5);">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px;">
-            <div>
-              <h3 style="margin:0 0 8px;font-size:19px;font-weight:800;color:#fff;">Agendar una llamada</h3>
-              <p style="margin:0;font-size:14px;color:#C9CBD6;line-height:1.5;">Cuéntanos tu situación y un ingeniero de calidad te contactará en breve</p>
-            </div>
-            <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.15);">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-form-avatar" shape="circle" placeholder="Foto" style="width:100%;height:100%;" hint-size="40,40"></x-import>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;">
-            <sc-for list="{{ formFields }}" as="field" hint-placeholder-count="10">
-              <div style="grid-column:{{ field.gridColumn }};">
-                <sc-if value="{{ field.isSelect }}" hint-placeholder-val="{{ false }}">
-                  <select style="width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#24356B;font-size:14px;color:#fff;outline:none;appearance:none;">
-                    <option value="" style="color:#A9ACB8;">{{ field.label }}</option>
-                    <sc-for list="{{ field.options }}" as="opt" hint-placeholder-count="5">
-                      <option value="{{ opt }}">{{ opt }}</option>
-                    </sc-for>
-                  </select>
-                </sc-if>
-                <sc-if value="{{ field.isNotSelect }}" hint-placeholder-val="{{ true }}">
-                  <input type="{{ field.inputType }}" placeholder="{{ field.label }}" style="width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#24356B;font-size:14px;color:#fff;outline:none;"/>
-                </sc-if>
-              </div>
-            </sc-for>
-          </div>
-          <label style="display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:12.5px;color:#C9CBD6;line-height:1.5;">
-            <input type="checkbox" style="margin-top:2px;"/>
-            <span>Acepto el aviso de privacidad y autorizo el contacto sobre mi solicitud.</span>
-          </label>
-          <button type="submit" style="width:100%;margin-top:20px;padding:15px 0;background:#F4C81C;color:#152355;border-radius:999px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:background .25s;">Agendar llamada →</button>
-          <p style="margin:14px 0 0;text-align:center;font-size:12px;color:#9A9CA8;">Visita de diagnóstico sin costo · Sin compromiso</p>
-        </form>
-
-        <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(10px);transition:opacity .6s .4s,transform .6s .4s;position:absolute;top:34px;right:-18px;z-index:3;display:flex;align-items:center;gap:10px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 16px 30px rgba(10,16,40,0.25);">
-          <div ref="{{ counterRef }}" style="font-size:20px;font-weight:800;color:#152355;">48h</div>
-          <div style="font-size:11px;color:#6B6D70;line-height:1.3;">activación<br/>con SLA</div>
+        <div class="lm-hero-image-frame">
+          <div class="lm-hero-image-glow" aria-hidden="true"></div>
+          <img src="assets/foto-ingeniero-casco.webp" alt="Especialista de Labor Mexicana realizando una inspección de calidad en planta" width="927" height="1662" fetchpriority="high">
+          <div class="lm-hero-image-grid" aria-hidden="true"></div>
         </div>
 
-        <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(10px);transition:opacity .6s .5s,transform .6s .5s;position:absolute;bottom:-16px;left:8px;z-index:3;display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:10px 16px;box-shadow:0 16px 30px rgba(10,16,40,0.25);">
-          <span style="width:30px;height:30px;border-radius:50%;background:#E7E9F1;color:#152355;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;">GM</span>
-          <div style="font-size:12px;color:#3B3D3F;font-weight:700;line-height:1.3;">CS2 aprobado<br/>por General Motors</div>
+        <div class="lm-hero-data-card lm-hero-data-card-a">
+          <span class="lm-hero-data-kicker">ACTIVACIÓN</span>
+          <strong>48h</strong>
+          <span>con SLA contractual</span>
         </div>
 
-        <div style="position:absolute;bottom:-38px;right:16px;width:130px;height:150px;z-index:1;border-radius:18px;overflow:hidden;border:5px solid #fff;box-shadow:0 20px 40px rgba(10,16,40,0.4);transform:rotate(5deg);">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-team-photo" shape="rect" placeholder="Foto: equipo en planta" style="width:100%;height:100%;" hint-size="130,150"></x-import>
+        <div class="lm-hero-data-card lm-hero-data-card-b">
+          <span class="lm-hero-data-icon" aria-hidden="true">✓</span>
+          <div>
+            <span class="lm-hero-data-kicker">CALIDAD EN PLANTA</span>
+            <strong>CS2 aprobado por GM</strong>
+          </div>
+        </div>
+
+        <div class="lm-hero-mini-card" aria-hidden="true">
+          <span>ÁRBOL</span>
+          <div class="lm-mini-bars"><i></i><i></i><i></i><i></i></div>
+          <small>Trazabilidad en tiempo real</small>
         </div>
       </div>
     </div>
@@ -136,17 +122,33 @@
     <div style="max-width:1280px;margin:0 auto;">
       <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Servicios</p>
       <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;max-width:720px;line-height:1.15;margin:0 0 56px;">Cuatro capas de calidad. Un solo proveedor.</h2>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;">
+      <div class="lm-service-grid">
         <sc-for list="{{ services }}" as="item" hint-placeholder-count="4">
-          <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,box-shadow .3s,transform .3s;background:linear-gradient(160deg, #FFFFFF 0%, #F0F1F6 100%);border-radius:24px;padding:32px;border:1px solid #ECEDEE;box-shadow:0 16px 32px rgba(59,61,63,0.06);position:relative;">
-            <p style="font-size:12px;font-weight:800;color:#152355;letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;">Servicio {{ item.n }}</p>
-            <h3 style="font-size:22px;font-weight:800;margin:0 0 12px;color:#3B3D3F;line-height:1.25;">{{ item.title }}</h3>
-            <p style="font-size:14.5px;color:#6B6D70;line-height:1.6;margin:0;">{{ item.desc }}</p>
-            <div style="border-top:1px solid #E1E2E4;margin:24px 0 0;"></div>
-            <div style="display:flex;justify-content:flex-end;margin-top:16px;">
-              <span style="width:34px;height:34px;border-radius:50%;background:#152355;color:#F4C81C;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;">{{ item.n }}</span>
+          <article class="lm-service-flip" ref="{{ item.reveal }}" tabindex="0" role="button" aria-pressed="false" aria-label="Servicio {{ item.n }}: {{ item.title }}. Activa la tarjeta para ver el detalle." style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;">
+            <div class="lm-service-flip-inner">
+              <div class="lm-service-face lm-service-front">
+                <div class="lm-service-topline">
+                  <span>Servicio {{ item.n }}</span>
+                  <i aria-hidden="true">{{ item.n }}</i>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <div class="lm-service-visual" aria-hidden="true">
+                  <span class="lm-service-ring"></span>
+                  <b>{{ item.n }}</b>
+                </div>
+                <span class="lm-service-hint">Ver detalle <i aria-hidden="true">↻</i></span>
+              </div>
+              <div class="lm-service-face lm-service-back">
+                <div class="lm-service-topline">
+                  <span>Servicio {{ item.n }}</span>
+                  <i aria-hidden="true">✓</i>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.desc }}</p>
+                <span class="lm-service-hint">Volver <i aria-hidden="true">↻</i></span>
+              </div>
             </div>
-          </div>
+          </article>
         </sc-for>
       </div>
       <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;background:#E7E9F1;border-radius:16px;padding:22px 28px;margin-top:32px;font-size:14.5px;color:#3B3D3F;line-height:1.6;">Si necesitas APQP y Safe Launch para un arranque nuevo, nuestros ingenieros acompañan todo el proceso bajo los estándares de la industria para que la primera pieza salga bien.</div>
@@ -163,41 +165,41 @@
         <a href="#contact-form" ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;background:#F4C81C;color:#152355;font-weight:800;font-size:14.5px;text-decoration:none;white-space:nowrap;">Agendar llamada <span>↗</span></a>
       </div>
 
-      <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;background:linear-gradient(160deg, #FFFFFF 0%, #F0F1F6 100%);border-radius:24px;padding:36px;border:1px solid #ECEDEE;box-shadow:0 20px 40px rgba(59,61,63,0.07);">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:28px;">
-          <p style="margin:0;font-size:12.5px;font-weight:800;color:#152355;letter-spacing:.06em;text-transform:uppercase;">{{ useCasePosLabel }}</p>
-          <button onClick="{{ toggleUseCasePlaying }}" style="display:flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;background:#fff;border:1px solid #E1E2E4;color:#3B3D3F;font-size:12.5px;font-weight:700;cursor:pointer;">{{ useCasePlayLabel }}</button>
+      <div class="lm-auto-timeline lm-usecase-timeline" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;">
+        <div class="lm-timeline-meta">
+          <span><b>{{ activeUseCaseData.n }}</b><i>/</i><span>03</span> · Casos de uso</span>
+          <button class="lm-timeline-toggle" type="button" onClick="{{ toggleUseCasePlaying }}" aria-pressed="{{ useCasePlaying }}" aria-label="Pausar o reanudar casos de uso">{{ useCasePlayLabel }}</button>
         </div>
 
-        <div style="display:flex;align-items:center;margin-bottom:32px;">
-          <sc-for list="{{ useCaseSteps }}" as="step" hint-placeholder-count="3">
-            <div style="display:flex;align-items:center;flex:1;">
-              <button onClick="{{ step.select }}" style="display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:none;cursor:pointer;flex-shrink:0;">
-                <span style="width:44px;height:44px;border-radius:50%;background:{{ step.circleBg }};color:{{ step.circleColor }};border:2px solid {{ step.circleBorder }};display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;transition:all .3s;">{{ step.n }}</span>
-                <span style="font-size:12px;font-weight:700;color:{{ step.labelColor }};white-space:nowrap;transition:color .3s;">{{ step.short }}</span>
+        <div class="lm-timeline-scroll">
+          <div class="lm-timeline-nav" role="tablist" aria-label="Casos de uso de BPO de Calidad" style="--timeline-count:3;">
+            <div class="lm-timeline-line" aria-hidden="true"><span style="width:{{ useCaseProgress }};"></span></div>
+            <sc-for list="{{ useCaseSteps }}" as="step" hint-placeholder-count="3">
+              <button class="lm-timeline-marker" data-active="{{ step.isActive }}" type="button" role="tab" aria-selected="{{ step.isActive }}" onClick="{{ step.select }}">
+                <span class="lm-timeline-dot">{{ step.n }}</span>
+                <span class="lm-timeline-label">{{ step.short }}</span>
               </button>
-              <div style="height:2px;background:#E1E2E4;flex:1;margin:0 8px 22px;"></div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="background:#fff;border-radius:20px;padding:40px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;">
-          <div style="font-size:clamp(4rem,4vw + 2rem,6rem);font-weight:800;color:#E7E9F1;line-height:1;">{{ activeUseCaseData.n }}</div>
-          <div>
-            <p style="margin:0 0 10px;font-size:12.5px;font-weight:800;color:#152355;letter-spacing:.06em;text-transform:uppercase;">Caso {{ activeUseCaseData.n }}</p>
-            <h3 style="margin:0 0 12px;font-size:24px;font-weight:800;color:#3B3D3F;line-height:1.25;">{{ activeUseCaseData.title }}</h3>
-            <p style="margin:0;font-size:15px;color:#6B6D70;line-height:1.6;">{{ activeUseCaseData.desc }}</p>
-            <sc-if value="{{ activeUseCaseData.hasStat }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;align-items:baseline;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid #ECEDEE;">
-                <span ref="{{ counterRef }}" style="font-size:28px;font-weight:800;color:#152355;">{{ activeUseCaseData.statValue }}</span>
-                <span style="font-size:13px;color:#6B6D70;">{{ activeUseCaseData.statLabel }}</span>
-              </div>
-            </sc-if>
+            </sc-for>
           </div>
         </div>
-        <div style="height:4px;background:#E1E2E4;border-radius:2px;margin-top:24px;overflow:hidden;">
-          <div style="height:100%;width:{{ useCaseProgress }};background:#152355;transition:width .5s ease;"></div>
+
+        <div class="lm-timeline-stage">
+          <article class="lm-timeline-panel">
+            <div class="lm-timeline-panel-number">{{ activeUseCaseData.n }}</div>
+            <div class="lm-timeline-panel-copy">
+              <span class="lm-timeline-eyebrow">Caso {{ activeUseCaseData.n }}</span>
+              <h3>{{ activeUseCaseData.title }}</h3>
+              <p>{{ activeUseCaseData.desc }}</p>
+              <sc-if value="{{ activeUseCaseData.hasStat }}" hint-placeholder-val="{{ false }}">
+                <div class="lm-timeline-stat">
+                  <strong ref="{{ counterRef }}">{{ activeUseCaseData.statValue }}</strong>
+                  <span>{{ activeUseCaseData.statLabel }}</span>
+                </div>
+              </sc-if>
+            </div>
+          </article>
         </div>
+        <div class="lm-timeline-cycle" aria-hidden="true"><span style="animation-duration:3000ms;"></span></div>
       </div>
 
       <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;margin-top:28px;background:#1E2F66;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px 36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
@@ -223,9 +225,9 @@
     </div>
 
     <div style="max-width:1280px;margin:0 auto;position:relative;z-index:1;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;text-align:left;">
+      <div class="lm-process-track" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;text-align:left;">
         <sc-for list="{{ processPhases }}" as="item" hint-placeholder-count="3">
-          <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
+          <div class="lm-process-card" ref="{{ item.reveal }}" style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
             <p style="font-size:12px;font-weight:800;color:{{ item.color }};letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;">Fase {{ item.n }} · “{{ item.tag }}”</p>
             <h3 style="font-size:24px;font-weight:800;margin:0 0 6px;color:#fff;">{{ item.title }}</h3>
             <p style="font-size:13.5px;color:#8A9BC9;margin:0 0 24px;">{{ item.subtitle }}</p>
@@ -273,7 +275,7 @@
             <a href="#contact-form" style="display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:999px;background:#fff;color:#152355;font-weight:800;font-size:14.5px;text-decoration:none;">Agendar llamada <span>↗</span></a>
           </div>
           <div style="position:relative;align-self:end;justify-self:end;max-width:360px;margin:0 0 0 0;">
-            <img src="assets/foto-ingeniero-casco.png" alt="Ingeniero de calidad Labor Mexicana" style="width:100%;height:auto;display:block;border-radius:20px 20px 0 0;"/>
+            <img src="assets/foto-ingeniero-casco.webp" alt="Ingeniero de calidad Labor Mexicana" style="width:100%;height:auto;display:block;border-radius:20px 20px 0 0;"/>
             <sc-for list="{{ approach }}" as="item" hint-placeholder-count="3">
               <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(18px);transition:opacity .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;animation:lm-card-float 3.4s ease-in-out infinite;animation-delay:{{ item.floatAnimDelay }};position:absolute;left:{{ item.floatLeft }};top:{{ item.floatTop }};width:270px;z-index:2;background:rgba(10,16,40,0.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px rgba(0,0,0,0.35);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;">
                 <img src="{{ item.icon }}" alt="" style="width:24px;height:24px;display:block;margin-top:2px;filter:invert(85%) sepia(50%) saturate(600%) hue-rotate(0deg) brightness(1.1);"/>
@@ -333,21 +335,45 @@
     </div>
   </section>
 
-  <section id="faq" style="padding:120px 48px;background:#F4F5F6;">
-    <div style="max-width:820px;margin:0 auto;">
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Preguntas frecuentes</p>
-      <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;margin:0 0 40px;">Conoce más de nosotros.</h2>
-      <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="8">
-        <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(16px);transition:opacity .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;border-bottom:1px solid #E1E2E4;">
-          <button onClick="{{ item.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 4px;background:none;border:none;cursor:pointer;text-align:left;font-size:16.5px;font-weight:700;color:#3B3D3F;">
-            <span>{{ item.q }}</span>
-            <span style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#E7E9F1;color:#152355;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;transform:{{ item.iconRotate }};transition:transform .3s;">+</span>
-          </button>
-          <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
-            <p style="margin:0 0 22px;padding:0 30px 0 4px;font-size:15px;color:#6B6D70;line-height:1.65;">{{ item.a }}</p>
-          </sc-if>
+  <section id="faq" class="lm-faq-timeline-section" style="padding:120px 48px;background:#F4F5F6;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="lm-faq-heading">
+        <div>
+          <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Preguntas frecuentes</p>
+          <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;margin:0;">Conoce más de nosotros.</h2>
         </div>
-      </sc-for>
+      </div>
+
+      <div class="lm-auto-timeline lm-faq-timeline" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;">
+        <div class="lm-timeline-meta">
+          <span><b>{{ activeFaqData.n }}</b><i>/</i><span>08</span> · Preguntas frecuentes</span>
+          <button class="lm-timeline-toggle" type="button" onClick="{{ toggleFaqPlaying }}" aria-pressed="{{ faqPlaying }}" aria-label="Pausar o reanudar preguntas frecuentes">{{ faqPlayLabel }}</button>
+        </div>
+
+        <div class="lm-timeline-scroll">
+          <div class="lm-timeline-nav lm-faq-nav" role="tablist" aria-label="Preguntas frecuentes" style="--timeline-count:8;">
+            <div class="lm-timeline-line" aria-hidden="true"><span style="width:{{ faqProgress }};"></span></div>
+            <sc-for list="{{ faqSteps }}" as="step" hint-placeholder-count="8">
+              <button class="lm-timeline-marker" data-active="{{ step.isActive }}" type="button" role="tab" aria-selected="{{ step.isActive }}" onClick="{{ step.select }}">
+                <span class="lm-timeline-dot">{{ step.n }}</span>
+                <span class="lm-timeline-label">{{ step.short }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div class="lm-timeline-stage lm-faq-stage">
+          <article class="lm-timeline-panel">
+            <div class="lm-timeline-panel-number">{{ activeFaqData.n }}</div>
+            <div class="lm-timeline-panel-copy">
+              <span class="lm-timeline-eyebrow">FAQ {{ activeFaqData.n }}</span>
+              <h3>{{ activeFaqData.q }}</h3>
+              <p>{{ activeFaqData.a }}</p>
+            </div>
+          </article>
+        </div>
+        <div class="lm-timeline-cycle" aria-hidden="true"><span style="animation-duration:4200ms;"></span></div>
+      </div>
     </div>
   </section>
 
@@ -357,61 +383,47 @@
       <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;margin:0;">Lo que cambia cuando operas con estructura</h2>
     </div>
     <div style="overflow:hidden;margin-bottom:20px;">
-      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee 38s linear infinite;" style-hover="animation-play-state:paused;">
+      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee 90s linear infinite;" style-hover="animation-play-state:paused;">
         <sc-for list="{{ testimonialsRow1 }}" as="t" hint-placeholder-count="8">
-          <div style="min-width:320px;background:#F4F5F6;border-radius:18px;padding:28px;border:1px solid #ECEDEE;">
-            <div style="color:#F4C81C;font-size:14px;margin-bottom:12px;">★★★★★</div>
-            <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 10px;">{{ t.tier }}</p>
-            <p style="font-size:14.5px;color:#6B6D70;line-height:1.6;margin:0;">{{ t.quote }}</p>
+          <div style="min-width:360px;max-width:360px;background:#F4F5F6;border-radius:18px;padding:24px;border:1px solid #ECEDEE;display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:56px;height:56px;border-radius:14px;overflow:hidden;flex-shrink:0;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ t.avatarId }}" shape="rect" placeholder="Foto" style="width:100%;height:100%;" hint-size="56,56"></x-import>
+            </div>
+            <div>
+              <div style="color:#F4C81C;font-size:13px;margin-bottom:8px;">★★★★★</div>
+              <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 8px;">{{ t.tier }}</p>
+              <p style="font-size:13.5px;color:#6B6D70;line-height:1.5;margin:0;">{{ t.quote }}</p>
+            </div>
           </div>
         </sc-for>
       </div>
     </div>
     <div style="overflow:hidden;">
-      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee-rev 34s linear infinite;" style-hover="animation-play-state:paused;">
+      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee-rev 82s linear infinite;" style-hover="animation-play-state:paused;">
         <sc-for list="{{ testimonialsRow2 }}" as="t" hint-placeholder-count="8">
-          <div style="min-width:320px;background:#F4F5F6;border-radius:18px;padding:28px;border:1px solid #ECEDEE;">
-            <div style="color:#F4C81C;font-size:14px;margin-bottom:12px;">★★★★★</div>
-            <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 10px;">{{ t.tier }}</p>
-            <p style="font-size:14.5px;color:#6B6D70;line-height:1.6;margin:0;">{{ t.quote }}</p>
+          <div style="min-width:360px;max-width:360px;background:#F4F5F6;border-radius:18px;padding:24px;border:1px solid #ECEDEE;display:flex;gap:16px;align-items:flex-start;">
+            <div style="width:56px;height:56px;border-radius:14px;overflow:hidden;flex-shrink:0;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ t.avatarId }}" shape="rect" placeholder="Foto" style="width:100%;height:100%;" hint-size="56,56"></x-import>
+            </div>
+            <div>
+              <div style="color:#F4C81C;font-size:13px;margin-bottom:8px;">★★★★★</div>
+              <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 8px;">{{ t.tier }}</p>
+              <p style="font-size:13.5px;color:#6B6D70;line-height:1.5;margin:0;">{{ t.quote }}</p>
+            </div>
           </div>
         </sc-for>
       </div>
     </div>
   </section>
 
-  <section id="contact-form" style="padding:120px 48px;background:#152355;">
-    <div style="max-width:760px;margin:0 auto;">
-      <div style="text-align:center;margin-bottom:48px;">
+  <section id="contact-form" class="lm-closing-cta lm-closing-cta-centered" style="padding:120px 48px;background:#152355;">
+    <div class="lm-closing-inner lm-closing-inner-centered">
+      <div class="lm-closing-copy lm-closing-copy-centered">
         <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#F4C81C;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Respuesta en menos de 24 horas</p>
         <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;margin:0 0 20px;color:#fff;">Agenda una llamada</h2>
-        <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:16px;color:#C9CBD6;line-height:1.6;max-width:600px;margin:0 auto;">Agenda una llamada para validar tu caso — ya sea un CS2 activo, scrap crónico, un lanzamiento en puerta o la necesidad de un quality liaison — y definimos si una visita de diagnóstico es el siguiente paso.</p>
+        <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:16px;color:#C9CBD6;line-height:1.6;max-width:760px;margin:0 auto 30px;">Agenda una llamada para validar tu caso — ya sea un CS2 activo, scrap crónico, un lanzamiento en puerta o la necesidad de un quality liaison — y definimos si una visita de diagnóstico es el siguiente paso.</p>
+        <a href="#contact-form" class="lm-closing-button lm-cta">Agendar llamada <span>↗</span></a>
       </div>
-      <form onSubmit="{{ preventSubmit }}" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;background:#1E2F66;border-radius:24px;padding:40px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 30px 60px rgba(0,0,0,0.35);">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;">
-          <sc-for list="{{ formFields }}" as="field" hint-placeholder-count="10">
-            <div style="grid-column:{{ field.gridColumn }};">
-              <label style="display:block;font-size:11.5px;font-weight:700;color:#C9CBD6;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">{{ field.label }}</label>
-              <sc-if value="{{ field.isSelect }}" hint-placeholder-val="{{ false }}">
-                <select style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#24356B;font-size:14px;color:#fff;outline:none;">
-                  <option value="">Selecciona una opción</option>
-                  <sc-for list="{{ field.options }}" as="opt" hint-placeholder-count="5">
-                    <option value="{{ opt }}">{{ opt }}</option>
-                  </sc-for>
-                </select>
-              </sc-if>
-              <sc-if value="{{ field.isNotSelect }}" hint-placeholder-val="{{ true }}">
-                <input type="{{ field.inputType }}" placeholder="{{ field.placeholder }}" style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#24356B;font-size:14px;color:#fff;outline:none;"/>
-              </sc-if>
-            </div>
-          </sc-for>
-        </div>
-        <label style="display:flex;gap:10px;align-items:flex-start;margin-top:20px;font-size:12.5px;color:#C9CBD6;line-height:1.5;">
-          <input type="checkbox" style="margin-top:2px;"/>
-          <span>Acepto el aviso de privacidad y autorizo el contacto sobre mi solicitud.</span>
-        </label>
-        <button type="submit" style="width:100%;margin-top:22px;padding:16px 0;background:#F4C81C;color:#152355;border-radius:999px;font-weight:800;font-size:15.5px;border:none;cursor:pointer;">Agendar llamada →</button>
-      </form>
     </div>
   </section>
 
@@ -543,13 +555,13 @@ const TESTIMONIALS = [
 
 const FAQS = [
   {q:"¿En cuánto pueden arrancar?", a:"En menos de 48 horas para contención de calidad, con SLA contractual y mano de obra local. No dependemos de traer gente de otra ciudad."},
-  {q:"¿Podemos mejorar tu costo?", a:"Sí. La mayoría de nuestros clientes reduce el costo total de calidad al eliminar scrap crónico y paros de línea; 99% termina el proceso en 30 días o menos."},
-  {q:"¿Operan en Estados Unidos?", a:"Sí, colocamos ingenieros residentes y quality liaisons tanto en México como en EUA, incluyendo plantas de proveedores."},
-  {q:"¿Pueden apoyar un PPAP o APQP que ya está en curso y atrasado?", a:"Sí. Ponemos ingenieros en tu planta para elaborar y auditar tu PPAP, y acompañamos APQP y Safe Launch bajo los estándares de la industria."},
-  {q:"¿Qué certificaciones tienen?", a:"ISO 9001:2015, REPSE, D-U-N-S y CS2 aprobado por General Motors."},
-  {q:"¿Auditan a mis proveedores en su propia planta?", a:"Sí, tenemos experiencia colocando ingenieros residentes en plantas propias y de proveedores, con supervisión diaria y seguimiento de correctivas."},
-  {q:"¿Qué tan compleja es la transición si hoy lo llevo con otra sorteadora?", a:"Si ya trabajas con nosotros, la contención arranca el mismo día sin curva de aprendizaje. Si vienes de otro proveedor, seguimos nuestro proceso de 3 pasos: diagnóstico sin costo, propuesta en 10 días y despliegue por fases, sin compromiso ciego."},
-  {q:"¿Qué es una auditoría VDA 6.3 y cuándo la necesito?", a:"Es una auditoría de proceso del estándar alemán VDA, usada por OEMs europeos para evaluar la madurez de tus procesos de manufactura. La recomendamos antes de un lanzamiento o cuando un cliente europeo la exige."},
+  {q:"¿Podemos mejorar tu costo?", a:"El costo se adapta al SLA."},
+  {q:"¿Qué certificaciones tienen?", a:"ISO 9001:2015 (TÜV NORD desde 2018), REPSE, D-U-N-S, y somos 1 de 6 proveedores CS2 aprobados por GM a nivel nacional, proveedor autorizado de REPSE en México desde 2019 (lista del gobierno / El Economista)."},
+  {q:"¿Qué tan compleja es la transición si hoy lo llevo con otra sorteadora?", a:"Se diseña por fases para no poner en riesgo producción: primero contención y continuidad, luego estandarización con nuestra metodología, y finalmente visibilidad con ÁRBOL y KPIs en tiempo real."},
+  {q:"¿Operan en Estados Unidos?", a:"Sí. Tenemos operación activa en Texas, Michigan, California e Illinois. Ofrecemos quality liaison e ingenieros residentes bilingües para plantas OEM y Tier 1 en EUA."},
+  {q:"¿Pueden apoyar un PPAP o APQP que ya está en curso y atrasado?", a:"Sí. Entramos con un assessment de readiness, identificamos los elementos críticos faltantes (estudios dimensionales, MSA, Cp/Cpk, flujo, PFMEA, plan de control) y ejecutamos en paralelo para llegar a la fecha de sumisión con evidencia completa."},
+  {q:"¿Auditan a mis proveedores en su propia planta?", a:"Sí. Colocamos quality liaison Gemba en la planta del proveedor: auditoría, seguimiento de acciones correctivas, verificación de contención y reporte directo a tu equipo de SQD."},
+  {q:"¿Qué es una auditoría VDA 6.3 y cuándo la necesito?", a:"VDA 6.3 es la auditoría de proceso del estándar alemán automotriz, exigida típicamente por OEMs y Tier 1 alemanes. La necesitas antes de una nominación, ante hallazgos recurrentes de tu cliente, o para calificar y desarrollar proveedores. Nuestros auditores la ejecutan en planta propia o de proveedor, con reporte de hallazgos y plan de cierre."},
 ];
 
 const TRUST_CHIPS = [
@@ -578,7 +590,7 @@ const FORM_FIELDS = [
 ];
 
 class Component extends DCLogic {
-  state = { openFaq: 0, navScrolled: false, activeUseCase: 0, useCasePlaying: true, activeResult: 0 };
+  state = { openFaq: 0, navScrolled: false, activeUseCase: 0, useCasePlaying: true, activeFaq: 0, faqPlaying: true, activeResult: 0 };
 
   revealRef = (el) => {
     if (!el || el.__lmObserved) return;
@@ -636,6 +648,18 @@ class Component extends DCLogic {
   preventSubmit = (e) => { e.preventDefault(); };
   toggleFaqIndex(i) { this.setState((s) => ({ openFaq: s.openFaq === i ? -1 : i })); }
 
+  setFaq = (i) => { this.setState({ activeFaq: i }); this.restartFaqTimer(); };
+  toggleFaqPlaying = () => {
+    this.setState((s) => ({ faqPlaying: !s.faqPlaying }));
+  };
+  restartFaqTimer() {
+    if (this._faqTimer) clearInterval(this._faqTimer);
+    this._faqTimer = setInterval(() => {
+      if (!this.state.faqPlaying) return;
+      this.setState((s) => ({ activeFaq: (s.activeFaq + 1) % FAQS.length }));
+    }, 4200);
+  }
+
   setUseCase = (i) => { this.setState({ activeUseCase: i }); this.restartUseCaseTimer(); };
   toggleUseCasePlaying = () => {
     this.setState((s) => ({ useCasePlaying: !s.useCasePlaying }));
@@ -645,7 +669,7 @@ class Component extends DCLogic {
     this._useCaseTimer = setInterval(() => {
       if (!this.state.useCasePlaying) return;
       this.setState((s) => ({ activeUseCase: (s.activeUseCase + 1) % USE_CASES.length }));
-    }, 4200);
+    }, 3000);
   }
 
   setResult = (i) => { this.setState({ activeResult: i }); this.restartResultTimer(); };
@@ -655,11 +679,12 @@ class Component extends DCLogic {
     if (this._resultTimer) clearInterval(this._resultTimer);
     this._resultTimer = setInterval(() => {
       this.setState((s) => ({ activeResult: (s.activeResult + 1) % RESULTS.length }));
-    }, 5000);
+    }, 3800);
   }
 
   componentDidMount() {
     this.restartUseCaseTimer();
+    this.restartFaqTimer();
     this.restartResultTimer();
     this._onScroll = () => {
       const y = window.scrollY;
@@ -675,6 +700,7 @@ class Component extends DCLogic {
     window.removeEventListener('scroll', this._onScroll);
     if (this._io) this._io.disconnect();
     if (this._useCaseTimer) clearInterval(this._useCaseTimer);
+    if (this._faqTimer) clearInterval(this._faqTimer);
     if (this._resultTimer) clearInterval(this._resultTimer);
   }
 
@@ -695,6 +721,7 @@ class Component extends DCLogic {
       reveal: this.revealRef,
       isOpen: this.state.openFaq === i,
       iconRotate: this.state.openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
+      openClass: this.state.openFaq === i ? 'lm-open' : '',
       toggle: () => this.toggleFaqIndex(i),
     }));
 
@@ -726,6 +753,20 @@ class Component extends DCLogic {
       useCasePlaying: this.state.useCasePlaying,
       useCasePlayLabel: this.state.useCasePlaying ? '❙❙ Pausar' : '► Reanudar',
       toggleUseCasePlaying: this.toggleUseCasePlaying,
+      faqSteps: FAQS.map((it, i) => ({
+        n: String(i + 1).padStart(2, '0'),
+        short: ['Arranque','Costo','Certificaciones','Transición','EUA','PPAP / APQP','Proveedores','VDA 6.3'][i],
+        isActive: this.state.activeFaq === i,
+        select: () => this.setFaq(i),
+      })),
+      activeFaqData: (() => {
+        const it = FAQS[this.state.activeFaq];
+        return { ...it, n: String(this.state.activeFaq + 1).padStart(2, '0') };
+      })(),
+      faqProgress: ((this.state.activeFaq + 1) / FAQS.length * 100) + '%',
+      faqPlaying: this.state.faqPlaying,
+      faqPlayLabel: this.state.faqPlaying ? '❙❙ Pausar' : '► Reanudar',
+      toggleFaqPlaying: this.toggleFaqPlaying,
       processPhases: mk(PROCESS_PHASES),
       approach: mk(APPROACH),
       results: mk(RESULTS),
@@ -741,8 +782,8 @@ class Component extends DCLogic {
       })),
       nextResult: this.nextResult,
       prevResult: this.prevResult,
-      testimonialsRow1: [...TESTIMONIALS, ...TESTIMONIALS],
-      testimonialsRow2: [...TESTIMONIALS.slice().reverse(), ...TESTIMONIALS.slice().reverse()],
+      testimonialsRow1: [...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r1-' + i })),
+      testimonialsRow2: [...TESTIMONIALS.slice().reverse(), ...TESTIMONIALS.slice().reverse()].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r2-' + i })),
       trustChips: TRUST_CHIPS,
       trustChipsLoop: [...TRUST_CHIPS, ...TRUST_CHIPS],
       faqs,

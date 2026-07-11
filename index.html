@@ -1,792 +1,2556 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Labor Mexicana | BPO de Calidad</title>
-<meta name="description" content="Contención de calidad, CS1/CS2, Quality Liaison, PPAP, APQP y auditorías en México y Estados Unidos.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<meta name="theme-color" content="#152355">
-<script src="./support.js"></script>
-<script src="./config.js"></script>
-<link rel="stylesheet" href="./enhancements.css">
-<script src="./enhancements.js" defer></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *{box-sizing:border-box;}
-    body{margin:0;font-family:'Manrope',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
-    a{color:#152355;}
-    a:hover{color:#0E1740;}
-    input::placeholder, textarea::placeholder{color:#8A8C8E;}
-    input, textarea, button{font-family:inherit;}
-    @keyframes lm-float1{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(30px,-40px,0) scale(1.08);}}
-    @keyframes lm-float2{0%,100%{transform:translate3d(0,0,0) scale(1);}50%{transform:translate3d(-40px,30px,0) scale(1.1);}}
-    @keyframes lm-marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-    @keyframes lm-marquee-rev{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
-    @keyframes lm-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
-    @keyframes lm-card-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-  </style>
-</helmet>
-<div style="font-family:'Manrope',Helvetica,Arial,sans-serif;background:#FFFFFF;color:#3B3D3F;overflow-x:hidden;position:relative;">
-
-  <nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 48px;background:#ffffff;box-shadow:0 2px 24px rgba(59,61,63,0.07);">
-    <a href="#hero" style="display:flex;align-items:center;text-decoration:none;">
-      <img src="assets/labor-mexicana-logo.png" alt="Labor Mexicana" style="height:30px;width:auto;display:block;"/>
-    </a>
-    <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
-      <a href="#services" style="font-size:14.5px;font-weight:600;color:#55575A;text-decoration:none;">Servicios</a>
-      <a href="#use-cases" style="font-size:14.5px;font-weight:600;color:#55575A;text-decoration:none;">Casos de uso</a>
-      <a href="#process" style="font-size:14.5px;font-weight:600;color:#55575A;text-decoration:none;">Proceso</a>
-      <a href="#results" style="font-size:14.5px;font-weight:600;color:#55575A;text-decoration:none;">Resultados</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:18px;">
-      <span style="font-size:13px;font-weight:700;color:#8A8C8E;">ES</span>
-      <a href="#contact-form" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;background:#152355;color:#fff;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;">Agendar llamada <span style="font-size:13px;">↗</span></a>
-    </div>
-  </nav>
-
-  <section id="hero" style="position:relative;overflow:hidden;padding:150px 48px 130px;background:#152355;">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);background-size:26px 26px;opacity:.5;pointer-events:none;"></div>
-    <span ref="{{ heroOrb1Ref }}" style="position:absolute;top:-120px;right:-80px;width:460px;height:460px;border-radius:50%;background:#F4C81C;opacity:.22;filter:blur(40px);animation:lm-float1 14s ease-in-out infinite;pointer-events:none;"></span>
-    <span ref="{{ heroOrb2Ref }}" style="position:absolute;bottom:-160px;left:-100px;width:420px;height:420px;border-radius:50%;background:#2A3C7A;opacity:.3;filter:blur(40px);animation:lm-float2 16s ease-in-out infinite;pointer-events:none;"></span>
-
-    <div style="position:relative;z-index:2;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:64px;align-items:center;">
-      <div>
-        <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,0.08);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;">
-          <span style="width:8px;height:8px;border-radius:50%;background:#F4C81C;animation:lm-pulse 1.8s ease-in-out infinite;"></span>
-          BPO de Calidad · +19 años en planta
-        </div>
-        <h1 ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1) .06s,transform .7s cubic-bezier(.16,1,.3,1) .06s;font-size:clamp(2.4rem,3vw + 1.4rem,4.1rem);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin:0 0 26px;color:#fff;">Contención de calidad activada en menos de <span style="color:#F4C81C;">48 horas</span>. Con SLA.</h1>
-        <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1) .12s,transform .7s cubic-bezier(.16,1,.3,1) .12s;font-size:clamp(1.05rem,.4vw + .95rem,1.22rem);color:#C9CACB;line-height:1.6;max-width:560px;margin:0 0 38px;">Desde contención CS1/CS2 hasta apoyo en GP‑12 y lanzamientos. Protegemos la calidad de tu planta con un equipo experto en sitio y trazabilidad absoluta a través de nuestra plataforma ÁRBOL.</p>
-        <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1) .18s,transform .7s cubic-bezier(.16,1,.3,1) .18s;display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="#contact-form" style="display:inline-flex;align-items:center;gap:8px;padding:16px 30px;border-radius:999px;background:#F4C81C;color:#152355;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 14px 30px rgba(244,200,28,0.3);transition:transform .25s;">Agendar una llamada <span>↗</span></a>
-          <a href="#services" style="padding:16px 30px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.25);color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:border-color .25s;">Ver los servicios</a>
-        </div>
-      </div>
-
-      <div class="lm-bpo-hero-visual" aria-label="Especialista de calidad de Labor Mexicana en planta">
-        <span class="lm-hero-shape lm-hero-shape-square" aria-hidden="true"></span>
-        <span class="lm-hero-shape lm-hero-shape-ring" aria-hidden="true"></span>
-        <span class="lm-hero-orbit" aria-hidden="true"></span>
-
-        <div class="lm-hero-image-frame">
-          <div class="lm-hero-image-glow" aria-hidden="true"></div>
-          <img src="assets/foto-ingeniero-casco-2.png" alt="Especialista de Labor Mexicana realizando una inspección de calidad en planta" width="479" height="778" fetchpriority="high">
-          <div class="lm-hero-image-grid" aria-hidden="true"></div>
-        </div>
-
-        <div class="lm-hero-data-card lm-hero-data-card-a">
-          <span class="lm-hero-data-kicker">ACTIVACIÓN</span>
-          <strong>48h</strong>
-          <span>con SLA contractual</span>
-        </div>
-
-        <div class="lm-hero-data-card lm-hero-data-card-b">
-          <span class="lm-hero-data-icon" aria-hidden="true">✓</span>
-          <div>
-            <span class="lm-hero-data-kicker">CALIDAD EN PLANTA</span>
-            <strong>CS2 aprobado por GM</strong>
-          </div>
-        </div>
-
-        <div class="lm-hero-mini-card" aria-hidden="true">
-          <span>ÁRBOL</span>
-          <div class="lm-mini-bars"><i></i><i></i><i></i><i></i></div>
-          <small>Trazabilidad en tiempo real</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:64px 48px;background:#152355;text-align:center;">
-    <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;margin:0 0 36px;font-size:clamp(1.15rem,.6vw + 1rem,1.5rem);font-weight:800;color:#fff;">80% del Top 10 automotriz global confía en Labor Mexicana</p>
-    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);mask-image:linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);">
-      <div style="display:flex;gap:22px;width:max-content;animation:lm-marquee 28s linear infinite;" class="lm-marquee-track">
-        <sc-for list="{{ trustChipsLoop }}" as="chip" hint-placeholder-count="18">
-          <div style="display:flex;align-items:center;justify-content:center;padding:10px 22px;height:88px;flex-shrink:0;">
-            <img src="{{ chip.src }}" alt="{{ chip.name }}" style="max-height:48px;max-width:200px;width:auto;height:auto;display:block;filter:brightness(0) invert(1);opacity:.75;transition:filter .3s,opacity .3s,transform .3s;cursor:pointer;" style-hover="filter:none;opacity:1;transform:scale(1.06);"/>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" style="padding:120px 48px;background:#FFFFFF;">
-    <div style="max-width:1280px;margin:0 auto;">
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Servicios</p>
-      <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;max-width:720px;line-height:1.15;margin:0 0 56px;">Cuatro capas de calidad. Un solo proveedor.</h2>
-      <div class="lm-service-grid">
-        <sc-for list="{{ services }}" as="item" hint-placeholder-count="4">
-          <article class="lm-service-flip" ref="{{ item.reveal }}" tabindex="0" role="button" aria-pressed="false" aria-label="Servicio {{ item.n }}: {{ item.title }}. Activa la tarjeta para ver el detalle." style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;">
-            <div class="lm-service-flip-inner">
-              <div class="lm-service-face lm-service-front">
-                <div class="lm-service-topline">
-                  <span>Servicio {{ item.n }}</span>
-                  <i aria-hidden="true">{{ item.n }}</i>
-                </div>
-                <h3>{{ item.title }}</h3>
-                <div class="lm-service-visual" aria-hidden="true">
-                  <span class="lm-service-ring"></span>
-                  <b>{{ item.n }}</b>
-                </div>
-                <span class="lm-service-hint">Ver detalle <i aria-hidden="true">↻</i></span>
-              </div>
-              <div class="lm-service-face lm-service-back">
-                <div class="lm-service-topline">
-                  <span>Servicio {{ item.n }}</span>
-                  <i aria-hidden="true">✓</i>
-                </div>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.desc }}</p>
-                <span class="lm-service-hint">Volver <i aria-hidden="true">↻</i></span>
-              </div>
-            </div>
-          </article>
-        </sc-for>
-      </div>
-      <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;background:#E7E9F1;border-radius:16px;padding:22px 28px;margin-top:32px;font-size:14.5px;color:#3B3D3F;line-height:1.6;">Si necesitas APQP y Safe Launch para un arranque nuevo, nuestros ingenieros acompañan todo el proceso bajo los estándares de la industria para que la primera pieza salga bien.</div>
-    </div>
-  </section>
-
-  <section id="use-cases" style="padding:120px 48px;background:#152355;">
-    <div style="max-width:1280px;margin:0 auto;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:48px;">
-        <div>
-          <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#F4C81C;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Casos de uso</p>
-          <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;max-width:640px;line-height:1.15;margin:0;color:#fff;">Reduce el costo de la “no calidad”</h2>
-        </div>
-        <a href="#contact-form" ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;background:#F4C81C;color:#152355;font-weight:800;font-size:14.5px;text-decoration:none;white-space:nowrap;">Agendar llamada <span>↗</span></a>
-      </div>
-
-      <div class="lm-auto-timeline lm-usecase-timeline" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;">
-        <div class="lm-timeline-meta">
-          <span><b>{{ activeUseCaseData.n }}</b><i>/</i><span>03</span> · Casos de uso</span>
-          <button class="lm-timeline-toggle" type="button" onClick="{{ toggleUseCasePlaying }}" aria-pressed="{{ useCasePlaying }}" aria-label="Pausar o reanudar casos de uso">{{ useCasePlayLabel }}</button>
-        </div>
-
-        <div class="lm-timeline-scroll">
-          <div class="lm-timeline-nav" role="tablist" aria-label="Casos de uso de BPO de Calidad" style="--timeline-count:3;">
-            <div class="lm-timeline-line" aria-hidden="true"><span style="width:{{ useCaseProgress }};"></span></div>
-            <sc-for list="{{ useCaseSteps }}" as="step" hint-placeholder-count="3">
-              <button class="lm-timeline-marker" data-active="{{ step.isActive }}" type="button" role="tab" aria-selected="{{ step.isActive }}" onClick="{{ step.select }}">
-                <span class="lm-timeline-dot">{{ step.n }}</span>
-                <span class="lm-timeline-label">{{ step.short }}</span>
-              </button>
-            </sc-for>
-          </div>
-        </div>
-
-        <div class="lm-timeline-stage">
-          <article class="lm-timeline-panel">
-            <div class="lm-timeline-panel-number">{{ activeUseCaseData.n }}</div>
-            <div class="lm-timeline-panel-copy">
-              <span class="lm-timeline-eyebrow">Caso {{ activeUseCaseData.n }}</span>
-              <h3>{{ activeUseCaseData.title }}</h3>
-              <p>{{ activeUseCaseData.desc }}</p>
-              <sc-if value="{{ activeUseCaseData.hasStat }}" hint-placeholder-val="{{ false }}">
-                <div class="lm-timeline-stat">
-                  <strong ref="{{ counterRef }}">{{ activeUseCaseData.statValue }}</strong>
-                  <span>{{ activeUseCaseData.statLabel }}</span>
-                </div>
-              </sc-if>
-            </div>
-          </article>
-        </div>
-        <div class="lm-timeline-cycle" aria-hidden="true"><span style="animation-duration:3000ms;"></span></div>
-      </div>
-
-      <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;margin-top:28px;background:#1E2F66;border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px 36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
-        <div ref="{{ counterRef }}" style="font-size:clamp(2.4rem,2vw + 1.6rem,3.2rem);font-weight:800;color:#F4C81C;line-height:1;flex-shrink:0;">99%</div>
-        <div>
-          <p style="margin:0 0 6px;font-size:12px;font-weight:800;color:#C9CBD6;letter-spacing:.06em;text-transform:uppercase;">Condición del servicio</p>
-          <p style="margin:0;font-size:15px;font-weight:700;color:#fff;line-height:1.5;">de nuestros clientes terminan el proceso de contención en 30 días o menos.</p>
-        </div>
-      </div>
-
-      <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;margin-top:28px;background:#1E2F66;border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:56px 48px;text-align:center;">
-        <p style="margin:0;color:#fff;font-size:clamp(1.5rem,1.4vw + 1.1rem,2.1rem);font-weight:800;">Arranca sin defectos desde la primera pieza.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" style="padding:120px 48px 100px;background:#152355;position:relative;overflow:hidden;text-align:center;">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);background-size:26px 26px;pointer-events:none;"></div>
-    <div id="process-phases" style="max-width:700px;margin:0 auto 64px;position:relative;z-index:1;padding-top:8px;">
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#F4C81C;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Proceso</p>
-      <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;line-height:1.2;margin:0 0 20px;color:#fff;">Tres fases. Un solo camino: construir calidad, no solo detectarla.</h2>
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:15px;color:#C9CBD6;line-height:1.6;margin:0;">Identifica tu fase por los síntomas. Cada tarjeta tiene su propia puerta de entrada — agenda una cita o pide cotización directa del paquete de esa fase.</p>
-    </div>
-
-    <div style="max-width:1280px;margin:0 auto;position:relative;z-index:1;">
-      <div class="lm-process-track" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;text-align:left;">
-        <sc-for list="{{ processPhases }}" as="item" hint-placeholder-count="3">
-          <div class="lm-process-card" ref="{{ item.reveal }}" style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
-            <p style="font-size:12px;font-weight:800;color:{{ item.color }};letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;">Fase {{ item.n }} · “{{ item.tag }}”</p>
-            <h3 style="font-size:24px;font-weight:800;margin:0 0 6px;color:#fff;">{{ item.title }}</h3>
-            <p style="font-size:13.5px;color:#8A9BC9;margin:0 0 24px;">{{ item.subtitle }}</p>
-
-            <p style="font-size:11.5px;font-weight:800;color:#8A9BC9;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;">¿Te suena?</p>
-            <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px;">
-              <sc-for list="{{ item.symptoms }}" as="s" hint-placeholder-count="4">
-                <div style="display:flex;align-items:flex-start;gap:9px;">
-                  <span style="color:{{ item.color }};font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;">✕</span>
-                  <span style="font-size:13.5px;color:#C9CBD6;line-height:1.5;">{{ s }}</span>
-                </div>
-              </sc-for>
-            </div>
-
-            <p style="font-size:11.5px;font-weight:800;color:#8A9BC9;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;">{{ item.solutionsLabel }}</p>
-            <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:28px;">
-              <sc-for list="{{ item.solutions }}" as="b" hint-placeholder-count="4">
-                <div style="display:flex;align-items:flex-start;gap:9px;">
-                  <span style="color:{{ item.color }};font-weight:800;flex-shrink:0;">—</span>
-                  <span style="font-size:13.5px;color:#C9CBD6;line-height:1.5;">{{ b }}</span>
-                </div>
-              </sc-for>
-            </div>
-
-            <a href="#contact-form" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 0;border-radius:999px;background:{{ item.color }};color:#152355;font-weight:800;font-size:14px;text-decoration:none;margin-bottom:10px;">{{ item.ctaPrimary }}</a>
-            <a href="#contact-form" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 0;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;margin-bottom:16px;">{{ item.ctaSecondary }}</a>
-            <p style="text-align:center;font-size:11.5px;color:#8A9BC9;margin:0;">{{ item.caption }}</p>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="approach" style="padding:120px 48px;background:#F4F5F6;position:relative;overflow:hidden;">
-    <div style="max-width:1280px;margin:0 auto;position:relative;z-index:1;">
-
-      <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;background:linear-gradient(135deg, #0F1A42 0%, #1E2F66 100%);border-radius:32px;padding:64px 40px 0 56px;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1.5px, transparent 1.5px);background-size:26px 26px;pointer-events:none;"></div>
-        <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:48px;align-items:end;">
-          <div style="padding-bottom:64px;padding-right:56px;">
-            <p style="font-size:12.5px;font-weight:800;color:#F4C81C;letter-spacing:.2em;text-transform:uppercase;margin:0 0 20px;">Nuestro enfoque</p>
-            <h2 style="font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;line-height:1.2;margin:0 0 22px;color:#fff;">No vendemos “precio por hora”. Vendemos estabilidad operativa con garantía.</h2>
-            <p style="font-size:15.5px;color:#C9CBD6;line-height:1.7;margin:0 0 18px;">La diferencia entre "sacar el turno" y operar sin riesgos está en la estructura: metodología de 5 pasos con escalamiento cronometrado, datos en tiempo real con la plataforma ÁRBOL, y un equipo que lleva 19 años operando calidad dentro de las plantas más exigentes del continente.</p>
-            <p style="font-size:16px;font-weight:700;color:#fff;margin:0 0 32px;">Cuando la producción está en riesgo, respondemos.</p>
-            <a href="#contact-form" style="display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:999px;background:#fff;color:#152355;font-weight:800;font-size:14.5px;text-decoration:none;">Agendar llamada <span>↗</span></a>
-          </div>
-          <div style="position:relative;align-self:end;justify-self:end;max-width:360px;margin:0 0 0 0;">
-            <img src="assets/foto-ingeniero-casco-3.png" alt="Ingeniero de calidad Labor Mexicana" style="width:100%;height:auto;display:block;border-radius:20px 20px 0 0;"/>
-            <sc-for list="{{ approach }}" as="item" hint-placeholder-count="3">
-              <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(18px);transition:opacity .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;animation:lm-card-float 3.4s ease-in-out infinite;animation-delay:{{ item.floatAnimDelay }};position:absolute;left:{{ item.floatLeft }};top:{{ item.floatTop }};width:270px;z-index:2;background:rgba(10,16,40,0.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px rgba(0,0,0,0.35);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;">
-                <img src="{{ item.icon }}" alt="" style="width:24px;height:24px;display:block;margin-top:2px;filter:invert(85%) sepia(50%) saturate(600%) hue-rotate(0deg) brightness(1.1);"/>
-                <div>
-                  <div style="font-size:16px;font-weight:800;color:#F4C81C;margin-bottom:4px;">{{ item.value }}</div>
-                  <h3 style="font-size:13.5px;font-weight:700;margin:0 0 4px;color:#fff;">{{ item.label }}</h3>
-                  <p style="font-size:12px;color:#C9CACB;line-height:1.5;margin:0;">{{ item.note }}</p>
-                </div>
-              </div>
-            </sc-for>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="results" style="padding:120px 48px;background:#FFFFFF;">
-    <div style="max-width:900px;margin:0 auto;text-align:center;">
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Resultados comprobados</p>
-      <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;line-height:1.15;margin:0 auto 56px;">Lo que cambia cuando operas con estructura</h2>
-    </div>
-
-    <div class="lm-results-grid" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;">
-      <sc-for list="{{ results }}" as="item" hint-placeholder-count="4">
-        <div ref="{{ item.reveal }}" style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:linear-gradient(160deg, #FFFFFF 0%, #F0F1F6 100%);border-radius:28px;padding:44px 40px;border:1px solid #ECEDEE;box-shadow:0 30px 60px rgba(59,61,63,0.1);">
-          <p style="font-size:13px;font-weight:800;color:#152355;text-transform:uppercase;letter-spacing:.06em;margin:0 0 28px;text-align:center;">{{ item.tier }}</p>
-          <div style="display:flex;justify-content:center;gap:40px;margin-bottom:28px;flex-wrap:wrap;">
-            <div>
-              <div ref="{{ counterRef }}" style="font-size:clamp(2.1rem,2.2vw + 1.4rem,2.9rem);font-weight:800;color:#152355;text-align:center;">{{ item.stat1v }}</div>
-              <div style="font-size:13px;color:#6B6D70;margin-top:8px;text-align:center;">{{ item.stat1l }}</div>
-            </div>
-            <div style="width:1px;background:#ECEDEE;"></div>
-            <div>
-              <div ref="{{ counterRef }}" style="font-size:clamp(2.1rem,2.2vw + 1.4rem,2.9rem);font-weight:800;color:#152355;text-align:center;">{{ item.stat2v }}</div>
-              <div style="font-size:13px;color:#6B6D70;margin-top:8px;text-align:center;">{{ item.stat2l }}</div>
-            </div>
-          </div>
-          <p style="font-size:14.5px;color:#6B6D70;line-height:1.6;margin:0;max-width:480px;margin-left:auto;margin-right:auto;border-top:1px solid #ECEDEE;padding-top:22px;text-align:center;">{{ item.note }}</p>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <section style="padding:100px 48px;background:#FFFFFF;">
-    <div ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;max-width:1280px;margin:0 auto;background:linear-gradient(135deg,#152355 0%,#0F1A42 100%);border-radius:32px;padding:64px 56px;position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);background-size:26px 26px;pointer-events:none;"></div>
-      <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:center;">
-        <div>
-          <p style="font-size:12.5px;font-weight:800;color:#F4C81C;letter-spacing:.2em;text-transform:uppercase;margin:0 0 18px;">SLA garantizado</p>
-          <div style="font-size:clamp(2rem,2vw + 1.4rem,2.8rem);font-weight:800;line-height:1.14;margin:0 0 18px;color:#fff;">Activación en <span ref="{{ counterRef }}" style="color:#F4C81C;">48h</span>. Con SLA contractual.</div>
-          <p style="font-size:16px;color:#C9CBD6;line-height:1.7;margin:0 0 32px;max-width:480px;">Si eres cliente nuevo, activamos en menos de 48 horas. Si ya hemos operado juntos, la contención puede arrancar el mismo día, cero curva de aprendizaje.</p>
-          <a href="#contact-form" style="display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:999px;background:#fff;color:#152355;font-weight:800;font-size:14.5px;text-decoration:none;margin-bottom:32px;">Agendar llamada <span>↗</span></a>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;">
-            <span style="padding:11px 20px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:13.5px;font-weight:700;">48h · Clientes nuevos</span>
-            <span style="padding:11px 20px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:13.5px;font-weight:700;">8h · Clientes actuales</span>
-          </div>
-        </div>
-        <div style="position:relative;">
-          <span style="position:absolute;inset:0;margin:auto;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(82,130,230,.4),transparent 70%);filter:blur(22px);"></span>
-          <div style="position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 70px rgba(0,0,0,.4);background:linear-gradient(160deg,#274785,#0d1c4a);aspect-ratio:.78;">
-            <img src="assets/foto-brazos-cruzados.png" alt="Especialista de Labor Mexicana con los brazos cruzados" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="lm-faq-timeline-section" style="padding:120px 48px;background:#F4F5F6;">
-    <div style="max-width:1280px;margin:0 auto;">
-      <div class="lm-faq-heading">
-        <div>
-          <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Preguntas frecuentes</p>
-          <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;margin:0;">Conoce más de nosotros.</h2>
-        </div>
-      </div>
-
-      <div class="lm-auto-timeline lm-faq-timeline" ref="{{ revealRef }}" style="opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s;">
-        <div class="lm-timeline-meta">
-          <span><b>{{ activeFaqData.n }}</b><i>/</i><span>08</span> · Preguntas frecuentes</span>
-          <button class="lm-timeline-toggle" type="button" onClick="{{ toggleFaqPlaying }}" aria-pressed="{{ faqPlaying }}" aria-label="Pausar o reanudar preguntas frecuentes">{{ faqPlayLabel }}</button>
-        </div>
-
-        <div class="lm-timeline-scroll">
-          <div class="lm-timeline-nav lm-faq-nav" role="tablist" aria-label="Preguntas frecuentes" style="--timeline-count:8;">
-            <div class="lm-timeline-line" aria-hidden="true"><span style="width:{{ faqProgress }};"></span></div>
-            <sc-for list="{{ faqSteps }}" as="step" hint-placeholder-count="8">
-              <button class="lm-timeline-marker" data-active="{{ step.isActive }}" type="button" role="tab" aria-selected="{{ step.isActive }}" onClick="{{ step.select }}">
-                <span class="lm-timeline-dot">{{ step.n }}</span>
-                <span class="lm-timeline-label">{{ step.short }}</span>
-              </button>
-            </sc-for>
-          </div>
-        </div>
-
-        <div class="lm-timeline-stage lm-faq-stage">
-          <article class="lm-timeline-panel">
-            <div class="lm-timeline-panel-number">{{ activeFaqData.n }}</div>
-            <div class="lm-timeline-panel-copy">
-              <span class="lm-timeline-eyebrow">FAQ {{ activeFaqData.n }}</span>
-              <h3>{{ activeFaqData.q }}</h3>
-              <p>{{ activeFaqData.a }}</p>
-            </div>
-          </article>
-        </div>
-        <div class="lm-timeline-cycle" aria-hidden="true"><span style="animation-duration:4200ms;"></span></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding:100px 0;background:#FFFFFF;overflow:hidden;">
-    <div style="max-width:1280px;margin:0 auto 48px;padding:0 48px;text-align:center;">
-      <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#152355;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Respuesta en menos de 24 horas</p>
-      <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.4rem);font-weight:800;margin:0;">Lo que cambia cuando operas con estructura</h2>
-    </div>
-    <div style="overflow:hidden;margin-bottom:20px;">
-      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee 150s linear infinite;" class="lm-marquee-track lm-testimonial-row1">
-        <sc-for list="{{ testimonialsRow1 }}" as="t" hint-placeholder-count="32">
-          <div style="min-width:360px;max-width:360px;background:#F4F5F6;border-radius:18px;padding:24px;border:1px solid #ECEDEE;display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:56px;height:56px;border-radius:14px;overflow:hidden;flex-shrink:0;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ t.avatarId }}" shape="rect" placeholder="Foto" src="{{ t.photo }}" style="width:100%;height:100%;" hint-size="56,56"></x-import>
-            </div>
-            <div>
-              <div style="color:#F4C81C;font-size:13px;margin-bottom:8px;">★★★★★</div>
-              <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 8px;">{{ t.tier }}</p>
-              <p style="font-size:13.5px;color:#6B6D70;line-height:1.5;margin:0;">{{ t.quote }}</p>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-    <div style="overflow:hidden;">
-      <div style="display:flex;gap:20px;width:max-content;animation:lm-marquee-rev 140s linear infinite;" class="lm-marquee-track lm-testimonial-row2">
-        <sc-for list="{{ testimonialsRow2 }}" as="t" hint-placeholder-count="32">
-          <div style="min-width:360px;max-width:360px;background:#F4F5F6;border-radius:18px;padding:24px;border:1px solid #ECEDEE;display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:56px;height:56px;border-radius:14px;overflow:hidden;flex-shrink:0;">
-              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ t.avatarId }}" shape="rect" placeholder="Foto" src="{{ t.photo }}" style="width:100%;height:100%;" hint-size="56,56"></x-import>
-            </div>
-            <div>
-              <div style="color:#F4C81C;font-size:13px;margin-bottom:8px;">★★★★★</div>
-              <p style="font-size:12.5px;font-weight:700;color:#152355;text-transform:uppercase;letter-spacing:.03em;margin:0 0 8px;">{{ t.tier }}</p>
-              <p style="font-size:13.5px;color:#6B6D70;line-height:1.5;margin:0;">{{ t.quote }}</p>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact-form" class="lm-closing-cta lm-closing-cta-centered" style="padding:120px 48px;background:#152355;">
-    <div class="lm-closing-inner lm-closing-inner-centered">
-      <div class="lm-closing-copy lm-closing-copy-centered">
-        <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:13px;font-weight:700;color:#F4C81C;letter-spacing:.22em;text-transform:uppercase;margin:0 0 16px;">Respuesta en menos de 24 horas</p>
-        <h2 ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:clamp(1.8rem,1.6vw + 1.2rem,2.6rem);font-weight:800;margin:0 0 20px;color:#fff;">Agenda una llamada</h2>
-        <p ref="{{ revealRef }}" style="opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;font-size:16px;color:#C9CBD6;line-height:1.6;max-width:760px;margin:0 auto 30px;">Agenda una llamada para validar tu caso — ya sea un CS2 activo, scrap crónico, un lanzamiento en puerta o la necesidad de un quality liaison — y definimos si una visita de diagnóstico es el siguiente paso.</p>
-        <a href="#contact-form" class="lm-closing-button lm-cta">Agendar llamada <span>↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <footer style="background:#152355;color:#fff;padding:72px 48px 32px;">
-    <div style="max-width:1280px;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:32px;">
-        <div>
-          <div style="margin-bottom:18px;">
-            <img src="assets/labor-mexicana-logo.png" alt="Labor Mexicana" style="height:28px;width:auto;display:block;filter:brightness(0) invert(1);"/>
-          </div>
-          <p style="font-size:13.5px;color:#C9CACB;line-height:1.6;margin:0;">BPO de Calidad &amp; Shelter Company. ISO 9001:2015 · REPSE · D‑U‑N‑S · CS2 aprobado por GM. Cobertura en México y EUA.</p>
-        </div>
-        <div>
-          <p style="font-size:13px;font-weight:700;color:#C9CACB;text-transform:uppercase;letter-spacing:.04em;margin:0 0 16px;">Páginas</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <a href="#services" style="font-size:14px;color:#fff;text-decoration:none;">Servicios</a>
-            <a href="#results" style="font-size:14px;color:#fff;text-decoration:none;">Resultados</a>
-            <a href="#" style="font-size:14px;color:#fff;text-decoration:none;">Reclutamiento</a>
-            <a href="#" style="font-size:14px;color:#fff;text-decoration:none;">Staffing &amp; Nómina</a>
-            <a href="#contact-form" style="font-size:14px;color:#fff;text-decoration:none;">Contacto</a>
-          </div>
-        </div>
-        <div>
-          <p style="font-size:13px;font-weight:700;color:#C9CACB;text-transform:uppercase;letter-spacing:.04em;margin:0 0 16px;">Contacto</p>
-          <a href="mailto:contacto@labormx.com" style="display:block;font-size:14px;color:#fff;text-decoration:none;margin-bottom:8px;">contacto@labormx.com</a>
-          <a href="https://labormx.com" style="display:block;font-size:14px;color:#fff;text-decoration:none;margin-bottom:20px;">labormx.com</a>
-          <a href="#contact-form" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#F4C81C;color:#152355;font-weight:700;font-size:13.5px;text-decoration:none;">Agendar llamada →</a>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#9EA0A8;">
-        <span>© 2026 Labor Mexicana · Servicios · Certificaciones · Aviso de privacidad</span>
-        <span>Desarrollado por Dinametra.com</span>
-      </div>
-    </div>
-  </footer>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-const SERVICES = [
-  {n:"01", title:"Contención y Sorteo CS1/CS2", desc:"Activación en menos de 48 horas con SLA contractual. Inspección incoming y outgoing, quality walls y contención GP-12 con reportes por turno y trazabilidad conectada a tu ERP (SAP, Oracle). Aprobados por GM para CS2."},
-  {n:"02", title:"Quality Liaison e Ingenieros Residentes", desc:"Experiencia colocando ingenieros residentes en plantas y en la de proveedores. Supervisión diaria, reportes y seguimiento de correctivas, en México y EUA."},
-  {n:"03", title:"Solución de Problemas", desc:"Diagnóstico de scrap crónico y problemas de productividad con Red X, 8D y 6 Sigma. Mejora de throughput y reducción de costo total de calidad."},
-  {n:"04", title:"Remanufactura", desc:"Reparamos piezas defectuosas y las reincorporamos a tu línea de ensamble. Si el scrap no baja y no sabes por qué, investigamos la causa raíz."},
-];
-
-const USE_CASES = [
-  {short:"CS2 sin paro de línea", title:"CS2 SIN riesgo de paro de línea", desc:"CS2 con supervisión en piso que asegura throughput y embarques al cliente junto con la calidad del producto.", hasStat:false},
-  {short:"Scrap crónico", title:"Scrap crónico que no baja", desc:"Ya probaste de todo y el scrap sigue ahí. Nosotros encontramos la causa raíz y la eliminamos. Lo que hoy tiras a la basura, lo recuperamos vía remanufactura y vuelve a ser margen.", hasStat:true, statValue:"90%", statLabel:"menos scrap en un Tier 1 de seating"},
-  {short:"Actualización de PPAP", title:"Actualización de PPAP", desc:"Tu cliente exige la actualización inmediata de tu PPAP y no puedes parar la línea para lograrlo. Ponemos ingenieros en tu planta para elaborarlos y auditarlos.", hasStat:false},
-];
-
-const PROCESS_PHASES = [
-  {
-    n: "01", tag: "CONTENER", color: "#E2574C", title: "Reactiva", subtitle: "El fuego ya está encendido",
-    symptoms: [
-      "Reclamos de cliente, garantías y escalamientos",
-      "Shopfloor sin cultura BIQ — el defecto viaja",
-      "Retrabajo como norma, sin causa raíz",
-      "Cuarentena desbordada",
-      "Respuesta lenta intra-fábrica y con proveedores",
-    ],
-    solutionsLabel: "Lo contenemos con",
-    solutions: [
-      "Inspección In & out · QRQC nivel CS2",
-      "Quality liaison ante tu cliente / OEM",
-      "NQE turnaround: scrap mgt, recovery, lean quarantine",
-      "Fast Response System y facilitación 8D",
-    ],
-    ctaPrimary: "Agendar cita urgente →", ctaSecondary: "Cotizar contención", caption: "Sorteo operando <48h · SLA firmado",
-  },
-  {
-    n: "02", tag: "PREVENIR", color: "#F4C81C", title: "Preventiva", subtitle: "Qué hago sin incluir",
-    symptoms: [
-      "Impactos por características pass-through",
-      "Error proofing con bypass, sin control ni Gemba",
-      "APQP y PPAP corriendo contra reloj",
-      "Temas dimensionales complejos sin Cp/Cpk",
-    ],
-    solutionsLabel: "Lo prevenimos con",
-    solutions: [
-      "Auditorías por proveedor VDA · IATF · Q1 · CQI",
-      "Quality liaison Gemba en planta proveedora",
-      "LPAs y auditorías de error proofing",
-      "Soporte APQP · PPAP · Run@Rate",
-      "GD&T + Red X (tier consultor)",
-    ],
-    ctaPrimary: "Agendar diagnóstico →", ctaSecondary: "Cotizar paquete preventivo", caption: "Ideal en lanzamientos y safe launch",
-  },
-  {
-    n: "03", tag: "ANTICIPAR", color: "#34B37B", title: "Predictiva", subtitle: "Saber antes de que arda",
-    symptoms: [
-      "Sin evidencia de capacidad de proceso confiable",
-      "Sin estrategia early launch, sin escapes a cliente",
-      "Quality walls sin trazabilidad de value stream",
-      "Cero visibilidad QVS entre sitios y departamentos",
-      "Desviaciones sin control en ECM ni accountability",
-    ],
-    solutionsLabel: "Lo anticipamos con",
-    solutions: [
-      "Estudios Cp/Cpk: incoming · manufactura · KPCs",
-      "Análisis de fall-out y escape rate",
-      "Gestión de desviaciones de ingeniería y ECM",
-      "Visibilidad multi-sitio en plataforma ÁRBOL",
-    ],
-    ctaPrimary: "Agendar sesión ejecutiva →", ctaSecondary: "Cotizar programa predictivo", caption: "Para directores de calidad multi-planta",
-  },
-];
-
-const APPROACH = [
-  {value:"14 Años", label:"Lanzando CS2 y solucionando problemas", note:"Proveedores nacionales certificados en todo México.", icon:"assets/icon-1.svg", pill:"14 Años"},
-  {value:"Tiempo real", label:"Plataforma ÁRBOL", note:"Calidad reactiva, preventiva y predictiva integrada. Datos en tiempo real, no hojas de papel.", icon:"assets/icon-2.svg", pill:"Plataforma ÁRBOL"},
-  {value:"Aprobación OEM", label:"Quality Liaison", note:"Nuestro quality liaison representa a tu planta, coordina la contención y mantiene la comunicación técnica para proteger tu relación comercial.", icon:"assets/icon-3.svg", pill:"Aprobación OEM"},
-];
-
-const RESULTS = [
-  {tier:"Tier 1 global · Conectividad y sistemas eléctricos", stat1v:"30,000", stat1l:"Piezas diarias controladas", stat2v:"66%", stat2l:"Reducción de partes en CS2", note:"Reconocidos por General Motors por excelencia en inspección y control de calidad."},
-  {tier:"Tier 1 asiático · Asientos JIT", stat1v:"90%", stat1l:"Scrap reducido", stat2v:"JIT", stat2l:"Cumplimiento garantizado", note:"Posicionados como socio estratégico para asegurar los compromisos de entrega al OEM."},
-  {tier:"Tier 1 europeo · Iluminación automotriz", stat1v:"CERO", stat1l:"Reclamos del cliente final (OEM)", stat2v:"100%", stat2l:"Desviaciones contenidas en sitio", note:"Inspección sistemática para proteger la calidad antes de que el material sea embarcado."},
-  {tier:"Tier 1 · Seating US & MX", stat1v:"90%", stat1l:"Reducción de área de cuarentena", stat2v:"8", stat2l:"Plantas gestionadas en EUA y MX", note:"Quality Liaison replicado exitosamente a nivel binacional."},
-];
-
-const TESTIMONIAL_CONTENT = [
-  {tier:"Tier 1 · Conectividad y Sistemas Eléctricos", quote:"30,000 piezas/día controladas · 66% reducción en part numbers CS2 · Reconocidos por GM por excelencia en inspección."},
-  {tier:"Tier 1 · Seating JIT", quote:"Scrap reducido 90% · Reconocidos por la planta como socio estratégico para asegurar JIT al OEM."},
-  {tier:"Tier 1 · Iluminación Automotriz", quote:"Cero claims del cliente desde el inicio del programa · Desviaciones contenidas antes del embarque."},
-  {tier:"Tier 1 · Seating US & MX", quote:"Quarantine reducida 90% en 8 plantas · Modelo replicado en EUA y México."},
-];
-
-const TESTIMONIAL_PHOTOS = [
-  "assets/testimonial-01.jpg","assets/testimonial-02.jpg","assets/testimonial-03.jpg","assets/testimonial-04.jpg",
-  "assets/testimonial-05.jpg","assets/testimonial-06.jpg","assets/testimonial-07.jpg","assets/testimonial-08.jpg",
-  "assets/testimonial-09.jpg","assets/testimonial-10.jpg","assets/testimonial-11.jpg","assets/testimonial-12.jpg",
-  "assets/testimonial-13.jpg","assets/testimonial-14.jpg","assets/testimonial-15.jpg","assets/testimonial-16.jpg",
-];
-
-const TESTIMONIALS = TESTIMONIAL_PHOTOS.map((photo, i) => ({ ...TESTIMONIAL_CONTENT[i % TESTIMONIAL_CONTENT.length], photo }));
-
-const FAQS = [
-  {q:"¿En cuánto pueden arrancar?", a:"En menos de 48 horas para contención de calidad, con SLA contractual y mano de obra local. No dependemos de traer gente de otra ciudad."},
-  {q:"¿Podemos mejorar tu costo?", a:"El costo se adapta al SLA."},
-  {q:"¿Qué certificaciones tienen?", a:"ISO 9001:2015 (TÜV NORD desde 2018), REPSE, D-U-N-S, y somos 1 de 6 proveedores CS2 aprobados por GM a nivel nacional, proveedor autorizado de REPSE en México desde 2019 (lista del gobierno / El Economista)."},
-  {q:"¿Qué tan compleja es la transición si hoy lo llevo con otra sorteadora?", a:"Se diseña por fases para no poner en riesgo producción: primero contención y continuidad, luego estandarización con nuestra metodología, y finalmente visibilidad con ÁRBOL y KPIs en tiempo real."},
-  {q:"¿Operan en Estados Unidos?", a:"Sí. Tenemos operación activa en Texas, Michigan, California e Illinois. Ofrecemos quality liaison e ingenieros residentes bilingües para plantas OEM y Tier 1 en EUA."},
-  {q:"¿Pueden apoyar un PPAP o APQP que ya está en curso y atrasado?", a:"Sí. Entramos con un assessment de readiness, identificamos los elementos críticos faltantes (estudios dimensionales, MSA, Cp/Cpk, flujo, PFMEA, plan de control) y ejecutamos en paralelo para llegar a la fecha de sumisión con evidencia completa."},
-  {q:"¿Auditan a mis proveedores en su propia planta?", a:"Sí. Colocamos quality liaison Gemba en la planta del proveedor: auditoría, seguimiento de acciones correctivas, verificación de contención y reporte directo a tu equipo de SQD."},
-  {q:"¿Qué es una auditoría VDA 6.3 y cuándo la necesito?", a:"VDA 6.3 es la auditoría de proceso del estándar alemán automotriz, exigida típicamente por OEMs y Tier 1 alemanes. La necesitas antes de una nominación, ante hallazgos recurrentes de tu cliente, o para calificar y desarrollar proveedores. Nuestros auditores la ejecutan en planta propia o de proveedor, con reporte de hallazgos y plan de cierre."},
-];
-
-const TRUST_CHIPS = [
-  {name:"Adient", src:"assets/logo-adient.webp"},
-  {name:"Aptiv", src:"assets/logo-aptiv.webp"},
-  {name:"Forvia", src:"assets/logo-forvia.webp"},
-  {name:"GM", src:"assets/logo-gm.png"},
-  {name:"John Deere", src:"assets/logo-john-deere.webp"},
-  {name:"Lear", src:"assets/logo-lear.webp"},
-  {name:"Mabe", src:"assets/logo-mabe.webp"},
-  {name:"Magna", src:"assets/logo-magna.webp"},
-  {name:"Martinrea", src:"assets/logo-martinrea.png"},
-];
-
-const FORM_FIELDS = [
-  {label:"Tu nombre", placeholder:"Nombre completo", inputType:"text", isSelect:false, full:false},
-  {label:"Correo", placeholder:"correo@planta.com", inputType:"email", isSelect:false, full:false},
-  {label:"Teléfono", placeholder:"+52 55 0000 0000", inputType:"tel", isSelect:false, full:false},
-  {label:"Nombre de planta", placeholder:"Nombre de planta", inputType:"text", isSelect:false, full:false},
-  {label:"Ciudad", placeholder:"Ciudad", inputType:"text", isSelect:false, full:false},
-  {label:"Estado", placeholder:"Estado", inputType:"text", isSelect:false, full:false},
-  {label:"País", placeholder:"País", inputType:"text", isSelect:false, full:false},
-  {label:"Número de personas (por turno)", isSelect:true, full:true, options:["Menos de 12","De 1 a 5","A partir de 12","De 12 a 24","De 24 a 50"]},
-  {label:"Cuando quieres arrancar", isSelect:true, full:true, options:["Hoy o mañana","Este mes","De 1 a 3 meses","6 meses","No lo tengo claro"]},
-  {label:"¿Qué necesitas resolver?", isSelect:true, full:true, options:["Sorteo, inspección o retrabajo","CS2","Ingenieros residentes / Quality Liaison","Scrap crónico o productividad","PPAP / APQP","Otro"]},
-];
-
-class Component extends DCLogic {
-  state = { openFaq: 0, navScrolled: false, activeUseCase: 0, useCasePlaying: true, activeFaq: 0, faqPlaying: true };
-
-  revealRef = (el) => {
-    if (!el || el.__lmObserved) return;
-    el.__lmObserved = true;
-    if (!this._io) {
-      this._io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
-            this._io.unobserve(entry.target);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Labor Mexicana | BPO de Calidad</title>
+    <meta
+      name="description"
+      content="Contención de calidad, CS1/CS2, Quality Liaison, PPAP, APQP y auditorías en México y Estados Unidos."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <meta name="theme-color" content="#152355" />
+    <script src="./support.js"></script>
+    <script src="./config.js"></script>
+    <link rel="stylesheet" href="./enhancements.css" />
+    <script src="./enhancements.js" defer></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          * {
+            box-sizing: border-box;
           }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-    }
-    this._io.observe(el);
-  };
+          body {
+            margin: 0;
+            font-family: "Manrope", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+          }
+          a {
+            color: #152355;
+          }
+          a:hover {
+            color: #0e1740;
+          }
+          input::placeholder,
+          textarea::placeholder {
+            color: #8a8c8e;
+          }
+          input,
+          textarea,
+          button {
+            font-family: inherit;
+          }
+          @keyframes lm-float1 {
+            0%,
+            100% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            50% {
+              transform: translate3d(30px, -40px, 0) scale(1.08);
+            }
+          }
+          @keyframes lm-float2 {
+            0%,
+            100% {
+              transform: translate3d(0, 0, 0) scale(1);
+            }
+            50% {
+              transform: translate3d(-40px, 30px, 0) scale(1.1);
+            }
+          }
+          @keyframes lm-marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          @keyframes lm-marquee-rev {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          @keyframes lm-pulse {
+            0%,
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+            50% {
+              opacity: 0.4;
+              transform: scale(0.8);
+            }
+          }
+          @keyframes lm-card-float {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-8px);
+            }
+          }
+        </style>
+      </helmet>
+      <div
+        style="
+          font-family: &quot;Manrope&quot;, Helvetica, Arial, sans-serif;
+          background: #ffffff;
+          color: #3b3d3f;
+          overflow-x: hidden;
+          position: relative;
+        "
+      >
+        <nav
+          style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 48px;
+            background: #ffffff;
+            box-shadow: 0 2px 24px rgba(59, 61, 63, 0.07);
+          "
+        >
+          <a
+            href="#hero"
+            style="display: flex; align-items: center; text-decoration: none"
+          >
+            <img
+              src="assets/labor-mexicana-logo.png"
+              alt="Labor Mexicana"
+              style="height: 30px; width: auto; display: block"
+            />
+          </a>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 32px;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="#services"
+              style="
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #55575a;
+                text-decoration: none;
+              "
+              >Servicios</a
+            >
+            <a
+              href="#use-cases"
+              style="
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #55575a;
+                text-decoration: none;
+              "
+              >Casos de uso</a
+            >
+            <a
+              href="#process"
+              style="
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #55575a;
+                text-decoration: none;
+              "
+              >Proceso</a
+            >
+            <a
+              href="#results"
+              style="
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #55575a;
+                text-decoration: none;
+              "
+              >Resultados</a
+            >
+          </div>
+          <div style="display: flex; align-items: center; gap: 18px">
+            <span style="font-size: 13px; font-weight: 700; color: #8a8c8e"
+              >ES</span
+            >
+            <a
+              href="#contact-form"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 11px 22px;
+                border-radius: 999px;
+                background: #152355;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                white-space: nowrap;
+              "
+              >Agendar llamada <span style="font-size: 13px">↗</span></a
+            >
+          </div>
+        </nav>
 
-  counterRef = (el) => {
-    if (!el || el.__lmCounted) return;
-    el.__lmCounted = true;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.runCounter(entry.target);
-          io.unobserve(entry.target);
+        <section
+          id="hero"
+          style="
+            position: relative;
+            overflow: hidden;
+            padding: 150px 48px 130px;
+            background: #152355;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              background-image: radial-gradient(
+                rgba(255, 255, 255, 0.05) 1.5px,
+                transparent 1.5px
+              );
+              background-size: 26px 26px;
+              opacity: 0.5;
+              pointer-events: none;
+            "
+          ></div>
+          <span
+            ref="{{ heroOrb1Ref }}"
+            style="
+              position: absolute;
+              top: -120px;
+              right: -80px;
+              width: 460px;
+              height: 460px;
+              border-radius: 50%;
+              background: #f4c81c;
+              opacity: 0.22;
+              filter: blur(40px);
+              animation: lm-float1 14s ease-in-out infinite;
+              pointer-events: none;
+            "
+          ></span>
+          <span
+            ref="{{ heroOrb2Ref }}"
+            style="
+              position: absolute;
+              bottom: -160px;
+              left: -100px;
+              width: 420px;
+              height: 420px;
+              border-radius: 50%;
+              background: #2a3c7a;
+              opacity: 0.3;
+              filter: blur(40px);
+              animation: lm-float2 16s ease-in-out infinite;
+              pointer-events: none;
+            "
+          ></span>
+
+          <div
+            style="
+              position: relative;
+              z-index: 2;
+              max-width: 1280px;
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+              gap: 64px;
+              align-items: center;
+            "
+          >
+            <div>
+              <div
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(20px);
+                  transition:
+                    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 8px 18px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  color: #fff;
+                  font-size: 12.5px;
+                  font-weight: 700;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                  margin-bottom: 28px;
+                "
+              >
+                <span
+                  style="
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #f4c81c;
+                    animation: lm-pulse 1.8s ease-in-out infinite;
+                  "
+                ></span>
+                BPO de Calidad · +19 años en planta
+              </div>
+              <h1
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(20px);
+                  transition:
+                    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.06s,
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
+                  font-size: clamp(2.4rem, 3vw + 1.4rem, 4.1rem);
+                  font-weight: 800;
+                  line-height: 1.08;
+                  letter-spacing: -0.02em;
+                  margin: 0 0 26px;
+                  color: #fff;
+                "
+              >
+                Contención de calidad activada en menos de
+                <span style="color: #f4c81c">48 horas</span>. Con SLA.
+              </h1>
+              <p
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(20px);
+                  transition:
+                    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+                  font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.22rem);
+                  color: #c9cacb;
+                  line-height: 1.6;
+                  max-width: 560px;
+                  margin: 0 0 38px;
+                "
+              >
+                Desde contención CS1/CS2 hasta apoyo en GP‑12 y lanzamientos.
+                Protegemos la calidad de tu planta con un equipo experto en
+                sitio y trazabilidad absoluta a través de nuestra plataforma
+                ÁRBOL.
+              </p>
+              <div
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(20px);
+                  transition:
+                    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+                  display: flex;
+                  gap: 16px;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  href="#contact-form"
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 16px 30px;
+                    border-radius: 999px;
+                    background: #f4c81c;
+                    color: #152355;
+                    font-weight: 800;
+                    font-size: 15px;
+                    text-decoration: none;
+                    box-shadow: 0 14px 30px rgba(244, 200, 28, 0.3);
+                    transition: transform 0.25s;
+                  "
+                  >Agendar una llamada <span>↗</span></a
+                >
+                <a
+                  href="#services"
+                  style="
+                    padding: 16px 30px;
+                    border-radius: 999px;
+                    border: 1.5px solid rgba(255, 255, 255, 0.25);
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 15px;
+                    text-decoration: none;
+                    transition: border-color 0.25s;
+                  "
+                  >Ver los servicios</a
+                >
+              </div>
+            </div>
+
+            <div
+              class="lm-bpo-hero-visual"
+              aria-label="Especialista de calidad de Labor Mexicana en planta"
+            >
+              <span
+                class="lm-hero-shape lm-hero-shape-square"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="lm-hero-shape lm-hero-shape-ring"
+                aria-hidden="true"
+              ></span>
+              <span class="lm-hero-orbit" aria-hidden="true"></span>
+
+              <div class="lm-hero-image-frame">
+                <div class="lm-hero-image-glow" aria-hidden="true"></div>
+                <img
+                  src="assets/foto-ingeniero-casco-2.png"
+                  alt="Especialista de Labor Mexicana realizando una inspección de calidad en planta"
+                  width="479"
+                  height="778"
+                  fetchpriority="high"
+                  margin="auto"
+                />
+                <div class="lm-hero-image-grid" aria-hidden="true"></div>
+              </div>
+
+              <div class="lm-hero-data-card lm-hero-data-card-a">
+                <span class="lm-hero-data-kicker">ACTIVACIÓN</span>
+                <strong>48h</strong>
+                <span>con SLA contractual</span>
+              </div>
+
+              <div class="lm-hero-data-card lm-hero-data-card-b">
+                <span class="lm-hero-data-icon" aria-hidden="true">✓</span>
+                <div>
+                  <span class="lm-hero-data-kicker">CALIDAD EN PLANTA</span>
+                  <strong>CS2 aprobado por GM</strong>
+                </div>
+              </div>
+
+              <div class="lm-hero-mini-card" aria-hidden="true">
+                <span>ÁRBOL</span>
+                <div class="lm-mini-bars"><i></i><i></i><i></i><i></i></div>
+                <small>Trazabilidad en tiempo real</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style="padding: 64px 48px; background: #152355; text-align: center"
+        >
+          <p
+            ref="{{ revealRef }}"
+            style="
+              opacity: 0;
+              transform: translateY(16px);
+              transition:
+                opacity 0.6s,
+                transform 0.6s;
+              margin: 0 0 36px;
+              font-size: clamp(1.15rem, 0.6vw + 1rem, 1.5rem);
+              font-weight: 800;
+              color: #fff;
+            "
+          >
+            80% del Top 10 automotriz global confía en Labor Mexicana
+          </p>
+          <div
+            style="
+              overflow: hidden;
+              -webkit-mask-image: linear-gradient(
+                90deg,
+                transparent 0%,
+                black 8%,
+                black 92%,
+                transparent 100%
+              );
+              mask-image: linear-gradient(
+                90deg,
+                transparent 0%,
+                black 8%,
+                black 92%,
+                transparent 100%
+              );
+            "
+          >
+            <div
+              style="
+                display: flex;
+                gap: 22px;
+                width: max-content;
+                animation: lm-marquee 28s linear infinite;
+              "
+              class="lm-marquee-track"
+            >
+              <sc-for
+                list="{{ trustChipsLoop }}"
+                as="chip"
+                hint-placeholder-count="18"
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px 22px;
+                    height: 88px;
+                    flex-shrink: 0;
+                  "
+                >
+                  <img
+                    src="{{ chip.src }}"
+                    alt="{{ chip.name }}"
+                    style="
+                      max-height: 48px;
+                      max-width: 200px;
+                      width: auto;
+                      height: auto;
+                      display: block;
+                      filter: brightness(0) invert(1);
+                      opacity: 0.75;
+                      transition:
+                        filter 0.3s,
+                        opacity 0.3s,
+                        transform 0.3s;
+                      cursor: pointer;
+                    "
+                    style-hover="filter:none;opacity:1;transform:scale(1.06);"
+                  />
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" style="padding: 120px 48px; background: #ffffff">
+          <div style="max-width: 1280px; margin: 0 auto">
+            <p
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: 13px;
+                font-weight: 700;
+                color: #152355;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                margin: 0 0 16px;
+              "
+            >
+              Servicios
+            </p>
+            <h2
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.6rem);
+                font-weight: 800;
+                max-width: 720px;
+                line-height: 1.15;
+                margin: 0 0 56px;
+              "
+            >
+              Cuatro capas de calidad. Un solo proveedor.
+            </h2>
+            <div class="lm-service-grid">
+              <sc-for
+                list="{{ services }}"
+                as="item"
+                hint-placeholder-count="4"
+              >
+                <article
+                  class="lm-service-flip"
+                  ref="{{ item.reveal }}"
+                  tabindex="0"
+                  role="button"
+                  aria-pressed="false"
+                  aria-label="Servicio {{ item.n }}: {{ item.title }}. Activa la tarjeta para ver el detalle."
+                  style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;"
+                >
+                  <div class="lm-service-flip-inner">
+                    <div class="lm-service-face lm-service-front">
+                      <div class="lm-service-topline">
+                        <span>Servicio {{ item.n }}</span>
+                        <i aria-hidden="true">{{ item.n }}</i>
+                      </div>
+                      <h3>{{ item.title }}</h3>
+                      <div class="lm-service-visual" aria-hidden="true">
+                        <span class="lm-service-ring"></span>
+                        <b>{{ item.n }}</b>
+                      </div>
+                      <span class="lm-service-hint"
+                        >Ver detalle <i aria-hidden="true">↻</i></span
+                      >
+                    </div>
+                    <div class="lm-service-face lm-service-back">
+                      <div class="lm-service-topline">
+                        <span>Servicio {{ item.n }}</span>
+                        <i aria-hidden="true">✓</i>
+                      </div>
+                      <h3>{{ item.title }}</h3>
+                      <p>{{ item.desc }}</p>
+                      <span class="lm-service-hint"
+                        >Volver <i aria-hidden="true">↻</i></span
+                      >
+                    </div>
+                  </div>
+                </article>
+              </sc-for>
+            </div>
+            <div
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                background: #e7e9f1;
+                border-radius: 16px;
+                padding: 22px 28px;
+                margin-top: 32px;
+                font-size: 14.5px;
+                color: #3b3d3f;
+                line-height: 1.6;
+              "
+            >
+              Si necesitas APQP y Safe Launch para un arranque nuevo, nuestros
+              ingenieros acompañan todo el proceso bajo los estándares de la
+              industria para que la primera pieza salga bien.
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="use-cases"
+          style="padding: 120px 48px; background: #152355"
+        >
+          <div style="max-width: 1280px; margin: 0 auto">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 24px;
+                flex-wrap: wrap;
+                margin-bottom: 48px;
+              "
+            >
+              <div>
+                <p
+                  ref="{{ revealRef }}"
+                  style="
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition:
+                      opacity 0.6s,
+                      transform 0.6s;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #f4c81c;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    margin: 0 0 16px;
+                  "
+                >
+                  Casos de uso
+                </p>
+                <h2
+                  ref="{{ revealRef }}"
+                  style="
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition:
+                      opacity 0.6s,
+                      transform 0.6s;
+                    font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.6rem);
+                    font-weight: 800;
+                    max-width: 640px;
+                    line-height: 1.15;
+                    margin: 0;
+                    color: #fff;
+                  "
+                >
+                  Reduce el costo de la “no calidad”
+                </h2>
+              </div>
+              <a
+                href="#contact-form"
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(16px);
+                  transition:
+                    opacity 0.6s,
+                    transform 0.6s;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 14px 26px;
+                  border-radius: 999px;
+                  background: #f4c81c;
+                  color: #152355;
+                  font-weight: 800;
+                  font-size: 14.5px;
+                  text-decoration: none;
+                  white-space: nowrap;
+                "
+                >Agendar llamada <span>↗</span></a
+              >
+            </div>
+
+            <div
+              class="lm-auto-timeline lm-usecase-timeline"
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                  opacity 0.7s,
+                  transform 0.7s;
+              "
+            >
+              <div class="lm-timeline-meta">
+                <span
+                  ><b>{{ activeUseCaseData.n }}</b><i>/</i><span>03</span> ·
+                  Casos de uso</span
+                >
+                <button
+                  class="lm-timeline-toggle"
+                  type="button"
+                  onClick="{{ toggleUseCasePlaying }}"
+                  aria-pressed="{{ useCasePlaying }}"
+                  aria-label="Pausar o reanudar casos de uso"
+                >
+                  {{ useCasePlayLabel }}
+                </button>
+              </div>
+
+              <div class="lm-timeline-scroll">
+                <div
+                  class="lm-timeline-nav"
+                  role="tablist"
+                  aria-label="Casos de uso de BPO de Calidad"
+                  style="--timeline-count: 3"
+                >
+                  <div class="lm-timeline-line" aria-hidden="true">
+                    <span style="width:{{ useCaseProgress }};"></span>
+                  </div>
+                  <sc-for
+                    list="{{ useCaseSteps }}"
+                    as="step"
+                    hint-placeholder-count="3"
+                  >
+                    <button
+                      class="lm-timeline-marker"
+                      data-active="{{ step.isActive }}"
+                      type="button"
+                      role="tab"
+                      aria-selected="{{ step.isActive }}"
+                      onClick="{{ step.select }}"
+                    >
+                      <span class="lm-timeline-dot">{{ step.n }}</span>
+                      <span class="lm-timeline-label">{{ step.short }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div class="lm-timeline-stage">
+                <article class="lm-timeline-panel">
+                  <div class="lm-timeline-panel-number">
+                    {{ activeUseCaseData.n }}
+                  </div>
+                  <div class="lm-timeline-panel-copy">
+                    <span class="lm-timeline-eyebrow"
+                      >Caso {{ activeUseCaseData.n }}</span
+                    >
+                    <h3>{{ activeUseCaseData.title }}</h3>
+                    <p>{{ activeUseCaseData.desc }}</p>
+                    <sc-if
+                      value="{{ activeUseCaseData.hasStat }}"
+                      hint-placeholder-val="{{ false }}"
+                    >
+                      <div class="lm-timeline-stat">
+                        <strong ref="{{ counterRef }}"
+                          >{{ activeUseCaseData.statValue }}</strong
+                        >
+                        <span>{{ activeUseCaseData.statLabel }}</span>
+                      </div>
+                    </sc-if>
+                  </div>
+                </article>
+              </div>
+              <div class="lm-timeline-cycle" aria-hidden="true">
+                <span style="animation-duration: 3000ms"></span>
+              </div>
+            </div>
+
+            <div
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                  opacity 0.7s,
+                  transform 0.7s;
+                margin-top: 28px;
+                background: #1e2f66;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                padding: 28px 36px;
+                display: flex;
+                align-items: center;
+                gap: 28px;
+                flex-wrap: wrap;
+              "
+            >
+              <div
+                ref="{{ counterRef }}"
+                style="
+                  font-size: clamp(2.4rem, 2vw + 1.6rem, 3.2rem);
+                  font-weight: 800;
+                  color: #f4c81c;
+                  line-height: 1;
+                  flex-shrink: 0;
+                "
+              >
+                99%
+              </div>
+              <div>
+                <p
+                  style="
+                    margin: 0 0 6px;
+                    font-size: 12px;
+                    font-weight: 800;
+                    color: #c9cbd6;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                  "
+                >
+                  Condición del servicio
+                </p>
+                <p
+                  style="
+                    margin: 0;
+                    font-size: 15px;
+                    font-weight: 700;
+                    color: #fff;
+                    line-height: 1.5;
+                  "
+                >
+                  de nuestros clientes terminan el proceso de contención en 30
+                  días o menos.
+                </p>
+              </div>
+            </div>
+
+            <div
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                  opacity 0.7s,
+                  transform 0.7s;
+                margin-top: 28px;
+                background: #1e2f66;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
+                padding: 56px 48px;
+                text-align: center;
+              "
+            >
+              <p
+                style="
+                  margin: 0;
+                  color: #fff;
+                  font-size: clamp(1.5rem, 1.4vw + 1.1rem, 2.1rem);
+                  font-weight: 800;
+                "
+              >
+                Arranca sin defectos desde la primera pieza.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="process"
+          style="
+            padding: 120px 48px 100px;
+            background: #152355;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              background-image: radial-gradient(
+                rgba(255, 255, 255, 0.05) 1.5px,
+                transparent 1.5px
+              );
+              background-size: 26px 26px;
+              pointer-events: none;
+            "
+          ></div>
+          <div
+            id="process-phases"
+            style="
+              max-width: 700px;
+              margin: 0 auto 64px;
+              position: relative;
+              z-index: 1;
+              padding-top: 8px;
+            "
+          >
+            <p
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: 13px;
+                font-weight: 700;
+                color: #f4c81c;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                margin: 0 0 16px;
+              "
+            >
+              Proceso
+            </p>
+            <h2
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.4rem);
+                font-weight: 800;
+                line-height: 1.2;
+                margin: 0 0 20px;
+                color: #fff;
+              "
+            >
+              Tres fases. Un solo camino: construir calidad, no solo detectarla.
+            </h2>
+            <p
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: 15px;
+                color: #c9cbd6;
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Identifica tu fase por los síntomas. Cada tarjeta tiene su propia
+              puerta de entrada — agenda una cita o pide cotización directa del
+              paquete de esa fase.
+            </p>
+          </div>
+
+          <div
+            style="
+              max-width: 1280px;
+              margin: 0 auto;
+              position: relative;
+              z-index: 1;
+            "
+          >
+            <div
+              class="lm-process-track"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 24px;
+                text-align: left;
+              "
+            >
+              <sc-for
+                list="{{ processPhases }}"
+                as="item"
+                hint-placeholder-count="3"
+              >
+                <div
+                  class="lm-process-card"
+                  ref="{{ item.reveal }}"
+                  style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;display:flex;flex-direction:column;"
+                >
+                  <p
+                    style="font-size:12px;font-weight:800;color:{{ item.color }};letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px;"
+                  >
+                    Fase {{ item.n }} · “{{ item.tag }}”
+                  </p>
+                  <h3
+                    style="
+                      font-size: 24px;
+                      font-weight: 800;
+                      margin: 0 0 6px;
+                      color: #fff;
+                    "
+                  >
+                    {{ item.title }}
+                  </h3>
+                  <p
+                    style="font-size: 13.5px; color: #8a9bc9; margin: 0 0 24px"
+                  >
+                    {{ item.subtitle }}
+                  </p>
+
+                  <p
+                    style="
+                      font-size: 11.5px;
+                      font-weight: 800;
+                      color: #8a9bc9;
+                      letter-spacing: 0.08em;
+                      text-transform: uppercase;
+                      margin: 0 0 12px;
+                    "
+                  >
+                    ¿Te suena?
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      gap: 9px;
+                      margin-bottom: 24px;
+                    "
+                  >
+                    <sc-for
+                      list="{{ item.symptoms }}"
+                      as="s"
+                      hint-placeholder-count="4"
+                    >
+                      <div
+                        style="display: flex; align-items: flex-start; gap: 9px"
+                      >
+                        <span
+                          style="color:{{ item.color }};font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;"
+                          >✕</span
+                        >
+                        <span
+                          style="
+                            font-size: 13.5px;
+                            color: #c9cbd6;
+                            line-height: 1.5;
+                          "
+                          >{{ s }}</span
+                        >
+                      </div>
+                    </sc-for>
+                  </div>
+
+                  <p
+                    style="
+                      font-size: 11.5px;
+                      font-weight: 800;
+                      color: #8a9bc9;
+                      letter-spacing: 0.08em;
+                      text-transform: uppercase;
+                      margin: 0 0 12px;
+                    "
+                  >
+                    {{ item.solutionsLabel }}
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      gap: 9px;
+                      margin-bottom: 28px;
+                    "
+                  >
+                    <sc-for
+                      list="{{ item.solutions }}"
+                      as="b"
+                      hint-placeholder-count="4"
+                    >
+                      <div
+                        style="display: flex; align-items: flex-start; gap: 9px"
+                      >
+                        <span
+                          style="color:{{ item.color }};font-weight:800;flex-shrink:0;"
+                          >—</span
+                        >
+                        <span
+                          style="
+                            font-size: 13.5px;
+                            color: #c9cbd6;
+                            line-height: 1.5;
+                          "
+                          >{{ b }}</span
+                        >
+                      </div>
+                    </sc-for>
+                  </div>
+
+                  <a
+                    href="#contact-form"
+                    style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 0;border-radius:999px;background:{{ item.color }};color:#152355;font-weight:800;font-size:14px;text-decoration:none;margin-bottom:10px;"
+                    >{{ item.ctaPrimary }}</a
+                  >
+                  <a
+                    href="#contact-form"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      justify-content: center;
+                      gap: 8px;
+                      padding: 12px 0;
+                      border-radius: 999px;
+                      background: transparent;
+                      border: 1px solid rgba(255, 255, 255, 0.25);
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 13.5px;
+                      text-decoration: none;
+                      margin-bottom: 16px;
+                    "
+                    >{{ item.ctaSecondary }}</a
+                  >
+                  <p
+                    style="
+                      text-align: center;
+                      font-size: 11.5px;
+                      color: #8a9bc9;
+                      margin: 0;
+                    "
+                  >
+                    {{ item.caption }}
+                  </p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="approach"
+          style="
+            padding: 120px 48px;
+            background: #f4f5f6;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              max-width: 1280px;
+              margin: 0 auto;
+              position: relative;
+              z-index: 1;
+            "
+          >
+            <div
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                  opacity 0.7s,
+                  transform 0.7s;
+                background: linear-gradient(135deg, #0f1a42 0%, #1e2f66 100%);
+                border-radius: 32px;
+                padding: 64px 40px 0 56px;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background-image: radial-gradient(
+                    rgba(255, 255, 255, 0.06) 1.5px,
+                    transparent 1.5px
+                  );
+                  background-size: 26px 26px;
+                  pointer-events: none;
+                "
+              ></div>
+              <div
+                style="
+                  position: relative;
+                  z-index: 1;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+                  gap: 48px;
+                  align-items: end;
+                "
+              >
+                <div style="padding-bottom: 64px; padding-right: 56px">
+                  <p
+                    style="
+                      font-size: 12.5px;
+                      font-weight: 800;
+                      color: #f4c81c;
+                      letter-spacing: 0.2em;
+                      text-transform: uppercase;
+                      margin: 0 0 20px;
+                    "
+                  >
+                    Nuestro enfoque
+                  </p>
+                  <h2
+                    style="
+                      font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.4rem);
+                      font-weight: 800;
+                      line-height: 1.2;
+                      margin: 0 0 22px;
+                      color: #fff;
+                    "
+                  >
+                    No vendemos “precio por hora”. Vendemos estabilidad
+                    operativa con garantía.
+                  </h2>
+                  <p
+                    style="
+                      font-size: 15.5px;
+                      color: #c9cbd6;
+                      line-height: 1.7;
+                      margin: 0 0 18px;
+                    "
+                  >
+                    La diferencia entre "sacar el turno" y operar sin riesgos
+                    está en la estructura: metodología de 5 pasos con
+                    escalamiento cronometrado, datos en tiempo real con la
+                    plataforma ÁRBOL, y un equipo que lleva 19 años operando
+                    calidad dentro de las plantas más exigentes del continente.
+                  </p>
+                  <p
+                    style="
+                      font-size: 16px;
+                      font-weight: 700;
+                      color: #fff;
+                      margin: 0 0 32px;
+                    "
+                  >
+                    Cuando la producción está en riesgo, respondemos.
+                  </p>
+                  <a
+                    href="#contact-form"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      padding: 15px 28px;
+                      border-radius: 999px;
+                      background: #fff;
+                      color: #152355;
+                      font-weight: 800;
+                      font-size: 14.5px;
+                      text-decoration: none;
+                    "
+                    >Agendar llamada <span>↗</span></a
+                  >
+                </div>
+                <div
+                  style="
+                    position: relative;
+                    align-self: end;
+                    justify-self: end;
+                    max-width: 450px;
+                    margin: 0 0 0 0;
+                  "
+                >
+                  <img
+                    src="assets/foto-ingeniero-casco-3.png"
+                    alt="Ingeniero de calidad Labor Mexicana"
+                    style="
+                      width: 100%;
+                      height: auto;
+                      display: block;
+                      border-radius: 20px 20px 0 0;
+                    "
+                  />
+                  <sc-for
+                    list="{{ approach }}"
+                    as="item"
+                    hint-placeholder-count="3"
+                  >
+                    <div
+                      ref="{{ item.reveal }}"
+                      style="opacity:0;transform:translateY(18px);transition:opacity .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .5s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;animation:lm-card-float 3.4s ease-in-out infinite;animation-delay:{{ item.floatAnimDelay }};position:absolute;left:{{ item.floatLeft }};top:{{ item.floatTop }};width:270px;z-index:2;background:rgba(10,16,40,0.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px rgba(0,0,0,0.35);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;"
+                    >
+                      <img
+                        src="{{ item.icon }}"
+                        alt=""
+                        style="
+                          width: 24px;
+                          height: 24px;
+                          display: block;
+                          margin-top: 2px;
+                          filter: invert(85%) sepia(50%) saturate(600%)
+                            hue-rotate(0deg) brightness(1.1);
+                        "
+                      />
+                      <div>
+                        <div
+                          style="
+                            font-size: 16px;
+                            font-weight: 800;
+                            color: #f4c81c;
+                            margin-bottom: 4px;
+                          "
+                        >
+                          {{ item.value }}
+                        </div>
+                        <h3
+                          style="
+                            font-size: 13.5px;
+                            font-weight: 700;
+                            margin: 0 0 4px;
+                            color: #fff;
+                          "
+                        >
+                          {{ item.label }}
+                        </h3>
+                        <p
+                          style="
+                            font-size: 12px;
+                            color: #c9cacb;
+                            line-height: 1.5;
+                            margin: 0;
+                          "
+                        >
+                          {{ item.note }}
+                        </p>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="results" style="padding: 120px 48px; background: #ffffff">
+          <div style="max-width: 900px; margin: 0 auto; text-align: center">
+            <p
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: 13px;
+                font-weight: 700;
+                color: #152355;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                margin: 0 0 16px;
+              "
+            >
+              Resultados comprobados
+            </p>
+            <h2
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.6rem);
+                font-weight: 800;
+                line-height: 1.15;
+                margin: 0 auto 56px;
+              "
+            >
+              Lo que cambia cuando operas con estructura
+            </h2>
+          </div>
+
+          <div
+            class="lm-results-grid"
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 28px;
+            "
+          >
+            <sc-for list="{{ results }}" as="item" hint-placeholder-count="4">
+              <div
+                ref="{{ item.reveal }}"
+                style="opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms,transform .6s cubic-bezier(.16,1,.3,1) {{ item.delay }}ms;background:linear-gradient(160deg, #FFFFFF 0%, #F0F1F6 100%);border-radius:28px;padding:44px 40px;border:1px solid #ECEDEE;box-shadow:0 30px 60px rgba(59,61,63,0.1);"
+              >
+                <p
+                  style="
+                    font-size: 13px;
+                    font-weight: 800;
+                    color: #152355;
+                    text-transform: uppercase;
+                    letter-spacing: 0.06em;
+                    margin: 0 0 28px;
+                    text-align: center;
+                  "
+                >
+                  {{ item.tier }}
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    gap: 40px;
+                    margin-bottom: 28px;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <div>
+                    <div
+                      ref="{{ counterRef }}"
+                      style="
+                        font-size: clamp(2.1rem, 2.2vw + 1.4rem, 2.9rem);
+                        font-weight: 800;
+                        color: #152355;
+                        text-align: center;
+                      "
+                    >
+                      {{ item.stat1v }}
+                    </div>
+                    <div
+                      style="
+                        font-size: 13px;
+                        color: #6b6d70;
+                        margin-top: 8px;
+                        text-align: center;
+                      "
+                    >
+                      {{ item.stat1l }}
+                    </div>
+                  </div>
+                  <div style="width: 1px; background: #ecedee"></div>
+                  <div>
+                    <div
+                      ref="{{ counterRef }}"
+                      style="
+                        font-size: clamp(2.1rem, 2.2vw + 1.4rem, 2.9rem);
+                        font-weight: 800;
+                        color: #152355;
+                        text-align: center;
+                      "
+                    >
+                      {{ item.stat2v }}
+                    </div>
+                    <div
+                      style="
+                        font-size: 13px;
+                        color: #6b6d70;
+                        margin-top: 8px;
+                        text-align: center;
+                      "
+                    >
+                      {{ item.stat2l }}
+                    </div>
+                  </div>
+                </div>
+                <p
+                  style="
+                    font-size: 14.5px;
+                    color: #6b6d70;
+                    line-height: 1.6;
+                    margin: 0;
+                    max-width: 480px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-top: 1px solid #ecedee;
+                    padding-top: 22px;
+                    text-align: center;
+                  "
+                >
+                  {{ item.note }}
+                </p>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="padding: 100px 48px; background: #ffffff">
+          <div
+            ref="{{ revealRef }}"
+            style="
+              opacity: 0;
+              transform: translateY(20px);
+              transition:
+                opacity 0.7s,
+                transform 0.7s;
+              max-width: 1280px;
+              margin: 0 auto;
+              background: linear-gradient(135deg, #152355 0%, #0f1a42 100%);
+              border-radius: 32px;
+              padding: 64px 56px;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(
+                  rgba(255, 255, 255, 0.05) 1.5px,
+                  transparent 1.5px
+                );
+                background-size: 26px 26px;
+                pointer-events: none;
+              "
+            ></div>
+            <div
+              style="
+                position: relative;
+                z-index: 1;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+                gap: 56px;
+                align-items: center;
+              "
+            >
+              <div>
+                <p
+                  style="
+                    font-size: 12.5px;
+                    font-weight: 800;
+                    color: #f4c81c;
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    margin: 0 0 18px;
+                  "
+                >
+                  SLA garantizado
+                </p>
+                <div
+                  style="
+                    font-size: clamp(2rem, 2vw + 1.4rem, 2.8rem);
+                    font-weight: 800;
+                    line-height: 1.14;
+                    margin: 0 0 18px;
+                    color: #fff;
+                  "
+                >
+                  Activación en
+                  <span ref="{{ counterRef }}" style="color: #f4c81c">48h</span
+                  >. Con SLA contractual.
+                </div>
+                <p
+                  style="
+                    font-size: 16px;
+                    color: #c9cbd6;
+                    line-height: 1.7;
+                    margin: 0 0 32px;
+                    max-width: 480px;
+                  "
+                >
+                  Si eres cliente nuevo, activamos en menos de 48 horas. Si ya
+                  hemos operado juntos, la contención puede arrancar el mismo
+                  día, cero curva de aprendizaje.
+                </p>
+                <a
+                  href="#contact-form"
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 15px 28px;
+                    border-radius: 999px;
+                    background: #fff;
+                    color: #152355;
+                    font-weight: 800;
+                    font-size: 14.5px;
+                    text-decoration: none;
+                    margin-bottom: 32px;
+                  "
+                  >Agendar llamada <span>↗</span></a
+                >
+                <div style="display: flex; flex-wrap: wrap; gap: 12px">
+                  <span
+                    style="
+                      padding: 11px 20px;
+                      border-radius: 999px;
+                      background: rgba(255, 255, 255, 0.08);
+                      border: 1px solid rgba(255, 255, 255, 0.14);
+                      color: #fff;
+                      font-size: 13.5px;
+                      font-weight: 700;
+                    "
+                    >48h · Clientes nuevos</span
+                  >
+                  <span
+                    style="
+                      padding: 11px 20px;
+                      border-radius: 999px;
+                      background: rgba(255, 255, 255, 0.08);
+                      border: 1px solid rgba(255, 255, 255, 0.14);
+                      color: #fff;
+                      font-size: 13.5px;
+                      font-weight: 700;
+                    "
+                    >8h · Clientes actuales</span
+                  >
+                </div>
+              </div>
+              <div style="position: relative">
+                <span
+                  style="
+                    position: absolute;
+                    inset: 0;
+                    margin: auto;
+                    width: 80%;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    background: radial-gradient(
+                      circle,
+                      rgba(82, 130, 230, 0.4),
+                      transparent 70%
+                    );
+                    filter: blur(22px);
+                  "
+                ></span>
+                <div
+                  style="
+                    position: relative;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    border: 1px solid rgba(255, 255, 255, 0.16);
+                    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+                    background: linear-gradient(160deg, #274785, #0d1c4a);
+                    aspect-ratio: 0.78;
+                  "
+                >
+                  <img
+                    src="assets/foto-brazos-cruzados.png"
+                    alt="Especialista de Labor Mexicana con los brazos cruzados"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      object-position: top center;
+                      display: block;
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="faq"
+          class="lm-faq-timeline-section"
+          style="padding: 120px 48px; background: #f4f5f6"
+        >
+          <div style="max-width: 1280px; margin: 0 auto">
+            <div class="lm-faq-heading">
+              <div>
+                <p
+                  ref="{{ revealRef }}"
+                  style="
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition:
+                      opacity 0.6s,
+                      transform 0.6s;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #152355;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    margin: 0 0 16px;
+                  "
+                >
+                  Preguntas frecuentes
+                </p>
+                <h2
+                  ref="{{ revealRef }}"
+                  style="
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition:
+                      opacity 0.6s,
+                      transform 0.6s;
+                    font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.4rem);
+                    font-weight: 800;
+                    margin: 0;
+                  "
+                >
+                  Conoce más de nosotros.
+                </h2>
+              </div>
+            </div>
+
+            <div
+              class="lm-auto-timeline lm-faq-timeline"
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                  opacity 0.7s,
+                  transform 0.7s;
+              "
+            >
+              <div class="lm-timeline-meta">
+                <span
+                  ><b>{{ activeFaqData.n }}</b><i>/</i><span>08</span> ·
+                  Preguntas frecuentes</span
+                >
+                <button
+                  class="lm-timeline-toggle"
+                  type="button"
+                  onClick="{{ toggleFaqPlaying }}"
+                  aria-pressed="{{ faqPlaying }}"
+                  aria-label="Pausar o reanudar preguntas frecuentes"
+                >
+                  {{ faqPlayLabel }}
+                </button>
+              </div>
+
+              <div class="lm-timeline-scroll">
+                <div
+                  class="lm-timeline-nav lm-faq-nav"
+                  role="tablist"
+                  aria-label="Preguntas frecuentes"
+                  style="--timeline-count: 8"
+                >
+                  <div class="lm-timeline-line" aria-hidden="true">
+                    <span style="width:{{ faqProgress }};"></span>
+                  </div>
+                  <sc-for
+                    list="{{ faqSteps }}"
+                    as="step"
+                    hint-placeholder-count="8"
+                  >
+                    <button
+                      class="lm-timeline-marker"
+                      data-active="{{ step.isActive }}"
+                      type="button"
+                      role="tab"
+                      aria-selected="{{ step.isActive }}"
+                      onClick="{{ step.select }}"
+                    >
+                      <span class="lm-timeline-dot">{{ step.n }}</span>
+                      <span class="lm-timeline-label">{{ step.short }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div class="lm-timeline-stage lm-faq-stage">
+                <article class="lm-timeline-panel">
+                  <div class="lm-timeline-panel-number">
+                    {{ activeFaqData.n }}
+                  </div>
+                  <div class="lm-timeline-panel-copy">
+                    <span class="lm-timeline-eyebrow"
+                      >FAQ {{ activeFaqData.n }}</span
+                    >
+                    <h3>{{ activeFaqData.q }}</h3>
+                    <p>{{ activeFaqData.a }}</p>
+                  </div>
+                </article>
+              </div>
+              <div class="lm-timeline-cycle" aria-hidden="true">
+                <span style="animation-duration: 4200ms"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style="padding: 100px 0; background: #ffffff; overflow: hidden"
+        >
+          <div
+            style="
+              max-width: 1280px;
+              margin: 0 auto 48px;
+              padding: 0 48px;
+              text-align: center;
+            "
+          >
+            <p
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: 13px;
+                font-weight: 700;
+                color: #152355;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                margin: 0 0 16px;
+              "
+            >
+              Respuesta en menos de 24 horas
+            </p>
+            <h2
+              ref="{{ revealRef }}"
+              style="
+                opacity: 0;
+                transform: translateY(16px);
+                transition:
+                  opacity 0.6s,
+                  transform 0.6s;
+                font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.4rem);
+                font-weight: 800;
+                margin: 0;
+              "
+            >
+              Lo que cambia cuando operas con estructura
+            </h2>
+          </div>
+          <div style="overflow: hidden; margin-bottom: 20px">
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                width: max-content;
+                animation: lm-marquee 150s linear infinite;
+              "
+              class="lm-marquee-track lm-testimonial-row1"
+            >
+              <sc-for
+                list="{{ testimonialsRow1 }}"
+                as="t"
+                hint-placeholder-count="32"
+              >
+                <div
+                  style="
+                    min-width: 360px;
+                    max-width: 360px;
+                    background: #f4f5f6;
+                    border-radius: 18px;
+                    padding: 24px;
+                    border: 1px solid #ecedee;
+                    display: flex;
+                    gap: 16px;
+                    align-items: flex-start;
+                  "
+                >
+                  <div
+                    style="
+                      width: 56px;
+                      height: 56px;
+                      border-radius: 14px;
+                      overflow: hidden;
+                      flex-shrink: 0;
+                    "
+                  >
+                    <x-import
+                      component-from-global-scope="image-slot"
+                      from="./image-slot.js"
+                      id="{{ t.avatarId }}"
+                      shape="rect"
+                      placeholder="Foto"
+                      src="{{ t.photo }}"
+                      style="width: 100%; height: 100%"
+                      hint-size="56,56"
+                    ></x-import>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        color: #f4c81c;
+                        font-size: 13px;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      ★★★★★
+                    </div>
+                    <p
+                      style="
+                        font-size: 12.5px;
+                        font-weight: 700;
+                        color: #152355;
+                        text-transform: uppercase;
+                        letter-spacing: 0.03em;
+                        margin: 0 0 8px;
+                      "
+                    >
+                      {{ t.tier }}
+                    </p>
+                    <p
+                      style="
+                        font-size: 13.5px;
+                        color: #6b6d70;
+                        line-height: 1.5;
+                        margin: 0;
+                      "
+                    >
+                      {{ t.quote }}
+                    </p>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="overflow: hidden">
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                width: max-content;
+                animation: lm-marquee-rev 140s linear infinite;
+              "
+              class="lm-marquee-track lm-testimonial-row2"
+            >
+              <sc-for
+                list="{{ testimonialsRow2 }}"
+                as="t"
+                hint-placeholder-count="32"
+              >
+                <div
+                  style="
+                    min-width: 360px;
+                    max-width: 360px;
+                    background: #f4f5f6;
+                    border-radius: 18px;
+                    padding: 24px;
+                    border: 1px solid #ecedee;
+                    display: flex;
+                    gap: 16px;
+                    align-items: flex-start;
+                  "
+                >
+                  <div
+                    style="
+                      width: 56px;
+                      height: 56px;
+                      border-radius: 14px;
+                      overflow: hidden;
+                      flex-shrink: 0;
+                    "
+                  >
+                    <x-import
+                      component-from-global-scope="image-slot"
+                      from="./image-slot.js"
+                      id="{{ t.avatarId }}"
+                      shape="rect"
+                      placeholder="Foto"
+                      src="{{ t.photo }}"
+                      style="width: 100%; height: 100%"
+                      hint-size="56,56"
+                    ></x-import>
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        color: #f4c81c;
+                        font-size: 13px;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      ★★★★★
+                    </div>
+                    <p
+                      style="
+                        font-size: 12.5px;
+                        font-weight: 700;
+                        color: #152355;
+                        text-transform: uppercase;
+                        letter-spacing: 0.03em;
+                        margin: 0 0 8px;
+                      "
+                    >
+                      {{ t.tier }}
+                    </p>
+                    <p
+                      style="
+                        font-size: 13.5px;
+                        color: #6b6d70;
+                        line-height: 1.5;
+                        margin: 0;
+                      "
+                    >
+                      {{ t.quote }}
+                    </p>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact-form"
+          class="lm-closing-cta lm-closing-cta-centered"
+          style="padding: 120px 48px; background: #152355"
+        >
+          <div class="lm-closing-inner lm-closing-inner-centered">
+            <div class="lm-closing-copy lm-closing-copy-centered">
+              <p
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(16px);
+                  transition:
+                    opacity 0.6s,
+                    transform 0.6s;
+                  font-size: 13px;
+                  font-weight: 700;
+                  color: #f4c81c;
+                  letter-spacing: 0.22em;
+                  text-transform: uppercase;
+                  margin: 0 0 16px;
+                "
+              >
+                Respuesta en menos de 24 horas
+              </p>
+              <h2
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(16px);
+                  transition:
+                    opacity 0.6s,
+                    transform 0.6s;
+                  font-size: clamp(1.8rem, 1.6vw + 1.2rem, 2.6rem);
+                  font-weight: 800;
+                  margin: 0 0 20px;
+                  color: #fff;
+                "
+              >
+                Agenda una llamada
+              </h2>
+              <p
+                ref="{{ revealRef }}"
+                style="
+                  opacity: 0;
+                  transform: translateY(16px);
+                  transition:
+                    opacity 0.6s,
+                    transform 0.6s;
+                  font-size: 16px;
+                  color: #c9cbd6;
+                  line-height: 1.6;
+                  max-width: 760px;
+                  margin: 0 auto 30px;
+                "
+              >
+                Agenda una llamada para validar tu caso — ya sea un CS2 activo,
+                scrap crónico, un lanzamiento en puerta o la necesidad de un
+                quality liaison — y definimos si una visita de diagnóstico es el
+                siguiente paso.
+              </p>
+              <a href="#contact-form" class="lm-closing-button lm-cta"
+                >Agendar llamada <span>↗</span></a
+              >
+            </div>
+          </div>
+        </section>
+
+        <footer
+          style="background: #152355; color: #fff; padding: 72px 48px 32px"
+        >
+          <div style="max-width: 1280px; margin: 0 auto">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 48px;
+                padding-bottom: 48px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                margin-bottom: 32px;
+              "
+            >
+              <div>
+                <div style="margin-bottom: 18px">
+                  <img
+                    src="assets/labor-mexicana-logo.png"
+                    alt="Labor Mexicana"
+                    style="
+                      height: 28px;
+                      width: auto;
+                      display: block;
+                      filter: brightness(0) invert(1);
+                    "
+                  />
+                </div>
+                <p
+                  style="
+                    font-size: 13.5px;
+                    color: #c9cacb;
+                    line-height: 1.6;
+                    margin: 0;
+                  "
+                >
+                  BPO de Calidad &amp; Shelter Company. ISO 9001:2015 · REPSE ·
+                  D‑U‑N‑S · CS2 aprobado por GM. Cobertura en México y EUA.
+                </p>
+              </div>
+              <div>
+                <p
+                  style="
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #c9cacb;
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                    margin: 0 0 16px;
+                  "
+                >
+                  Páginas
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 10px">
+                  <a
+                    href="#services"
+                    style="font-size: 14px; color: #fff; text-decoration: none"
+                    >Servicios</a
+                  >
+                  <a
+                    href="#results"
+                    style="font-size: 14px; color: #fff; text-decoration: none"
+                    >Resultados</a
+                  >
+                  <a
+                    href="#"
+                    style="font-size: 14px; color: #fff; text-decoration: none"
+                    >Reclutamiento</a
+                  >
+                  <a
+                    href="#"
+                    style="font-size: 14px; color: #fff; text-decoration: none"
+                    >Staffing &amp; Nómina</a
+                  >
+                  <a
+                    href="#contact-form"
+                    style="font-size: 14px; color: #fff; text-decoration: none"
+                    >Contacto</a
+                  >
+                </div>
+              </div>
+              <div>
+                <p
+                  style="
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #c9cacb;
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                    margin: 0 0 16px;
+                  "
+                >
+                  Contacto
+                </p>
+                <a
+                  href="mailto:contacto@labormx.com"
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    color: #fff;
+                    text-decoration: none;
+                    margin-bottom: 8px;
+                  "
+                  >contacto@labormx.com</a
+                >
+                <a
+                  href="https://labormx.com"
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    color: #fff;
+                    text-decoration: none;
+                    margin-bottom: 20px;
+                  "
+                  >labormx.com</a
+                >
+                <a
+                  href="#contact-form"
+                  style="
+                    display: inline-block;
+                    padding: 12px 22px;
+                    border-radius: 999px;
+                    background: #f4c81c;
+                    color: #152355;
+                    font-weight: 700;
+                    font-size: 13.5px;
+                    text-decoration: none;
+                  "
+                  >Agendar llamada →</a
+                >
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 12px;
+                font-size: 12.5px;
+                color: #9ea0a8;
+              "
+            >
+              <span
+                >© 2026 Labor Mexicana · Servicios · Certificaciones · Aviso de
+                privacidad</span
+              >
+              <span>Desarrollado por Dinametra.com</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </x-dc>
+    <script type="text/x-dc" data-dc-script>
+      const SERVICES = [
+        {n:"01", title:"Contención y Sorteo CS1/CS2", desc:"Activación en menos de 48 horas con SLA contractual. Inspección incoming y outgoing, quality walls y contención GP-12 con reportes por turno y trazabilidad conectada a tu ERP (SAP, Oracle). Aprobados por GM para CS2."},
+        {n:"02", title:"Quality Liaison e Ingenieros Residentes", desc:"Experiencia colocando ingenieros residentes en plantas y en la de proveedores. Supervisión diaria, reportes y seguimiento de correctivas, en México y EUA."},
+        {n:"03", title:"Solución de Problemas", desc:"Diagnóstico de scrap crónico y problemas de productividad con Red X, 8D y 6 Sigma. Mejora de throughput y reducción de costo total de calidad."},
+        {n:"04", title:"Remanufactura", desc:"Reparamos piezas defectuosas y las reincorporamos a tu línea de ensamble. Si el scrap no baja y no sabes por qué, investigamos la causa raíz."},
+      ];
+
+      const USE_CASES = [
+        {short:"CS2 sin paro de línea", title:"CS2 SIN riesgo de paro de línea", desc:"CS2 con supervisión en piso que asegura throughput y embarques al cliente junto con la calidad del producto.", hasStat:false},
+        {short:"Scrap crónico", title:"Scrap crónico que no baja", desc:"Ya probaste de todo y el scrap sigue ahí. Nosotros encontramos la causa raíz y la eliminamos. Lo que hoy tiras a la basura, lo recuperamos vía remanufactura y vuelve a ser margen.", hasStat:true, statValue:"90%", statLabel:"menos scrap en un Tier 1 de seating"},
+        {short:"Actualización de PPAP", title:"Actualización de PPAP", desc:"Tu cliente exige la actualización inmediata de tu PPAP y no puedes parar la línea para lograrlo. Ponemos ingenieros en tu planta para elaborarlos y auditarlos.", hasStat:false},
+      ];
+
+      const PROCESS_PHASES = [
+        {
+          n: "01", tag: "CONTENER", color: "#E2574C", title: "Reactiva", subtitle: "El fuego ya está encendido",
+          symptoms: [
+            "Reclamos de cliente, garantías y escalamientos",
+            "Shopfloor sin cultura BIQ — el defecto viaja",
+            "Retrabajo como norma, sin causa raíz",
+            "Cuarentena desbordada",
+            "Respuesta lenta intra-fábrica y con proveedores",
+          ],
+          solutionsLabel: "Lo contenemos con",
+          solutions: [
+            "Inspección In & out · QRQC nivel CS2",
+            "Quality liaison ante tu cliente / OEM",
+            "NQE turnaround: scrap mgt, recovery, lean quarantine",
+            "Fast Response System y facilitación 8D",
+          ],
+          ctaPrimary: "Agendar cita urgente →", ctaSecondary: "Cotizar contención", caption: "Sorteo operando <48h · SLA firmado",
+        },
+        {
+          n: "02", tag: "PREVENIR", color: "#F4C81C", title: "Preventiva", subtitle: "Qué hago sin incluir",
+          symptoms: [
+            "Impactos por características pass-through",
+            "Error proofing con bypass, sin control ni Gemba",
+            "APQP y PPAP corriendo contra reloj",
+            "Temas dimensionales complejos sin Cp/Cpk",
+          ],
+          solutionsLabel: "Lo prevenimos con",
+          solutions: [
+            "Auditorías por proveedor VDA · IATF · Q1 · CQI",
+            "Quality liaison Gemba en planta proveedora",
+            "LPAs y auditorías de error proofing",
+            "Soporte APQP · PPAP · Run@Rate",
+            "GD&T + Red X (tier consultor)",
+          ],
+          ctaPrimary: "Agendar diagnóstico →", ctaSecondary: "Cotizar paquete preventivo", caption: "Ideal en lanzamientos y safe launch",
+        },
+        {
+          n: "03", tag: "ANTICIPAR", color: "#34B37B", title: "Predictiva", subtitle: "Saber antes de que arda",
+          symptoms: [
+            "Sin evidencia de capacidad de proceso confiable",
+            "Sin estrategia early launch, sin escapes a cliente",
+            "Quality walls sin trazabilidad de value stream",
+            "Cero visibilidad QVS entre sitios y departamentos",
+            "Desviaciones sin control en ECM ni accountability",
+          ],
+          solutionsLabel: "Lo anticipamos con",
+          solutions: [
+            "Estudios Cp/Cpk: incoming · manufactura · KPCs",
+            "Análisis de fall-out y escape rate",
+            "Gestión de desviaciones de ingeniería y ECM",
+            "Visibilidad multi-sitio en plataforma ÁRBOL",
+          ],
+          ctaPrimary: "Agendar sesión ejecutiva →", ctaSecondary: "Cotizar programa predictivo", caption: "Para directores de calidad multi-planta",
+        },
+      ];
+
+      const APPROACH = [
+        {value:"14 Años", label:"Lanzando CS2 y solucionando problemas", note:"Proveedores nacionales certificados en todo México.", icon:"assets/icon-1.svg", pill:"14 Años"},
+        {value:"Tiempo real", label:"Plataforma ÁRBOL", note:"Calidad reactiva, preventiva y predictiva integrada. Datos en tiempo real, no hojas de papel.", icon:"assets/icon-2.svg", pill:"Plataforma ÁRBOL"},
+        {value:"Aprobación OEM", label:"Quality Liaison", note:"Nuestro quality liaison representa a tu planta, coordina la contención y mantiene la comunicación técnica para proteger tu relación comercial.", icon:"assets/icon-3.svg", pill:"Aprobación OEM"},
+      ];
+
+      const RESULTS = [
+        {tier:"Tier 1 global · Conectividad y sistemas eléctricos", stat1v:"30,000", stat1l:"Piezas diarias controladas", stat2v:"66%", stat2l:"Reducción de partes en CS2", note:"Reconocidos por General Motors por excelencia en inspección y control de calidad."},
+        {tier:"Tier 1 asiático · Asientos JIT", stat1v:"90%", stat1l:"Scrap reducido", stat2v:"JIT", stat2l:"Cumplimiento garantizado", note:"Posicionados como socio estratégico para asegurar los compromisos de entrega al OEM."},
+        {tier:"Tier 1 europeo · Iluminación automotriz", stat1v:"CERO", stat1l:"Reclamos del cliente final (OEM)", stat2v:"100%", stat2l:"Desviaciones contenidas en sitio", note:"Inspección sistemática para proteger la calidad antes de que el material sea embarcado."},
+        {tier:"Tier 1 · Seating US & MX", stat1v:"90%", stat1l:"Reducción de área de cuarentena", stat2v:"8", stat2l:"Plantas gestionadas en EUA y MX", note:"Quality Liaison replicado exitosamente a nivel binacional."},
+      ];
+
+      const TESTIMONIAL_CONTENT = [
+        {tier:"Tier 1 · Conectividad y Sistemas Eléctricos", quote:"30,000 piezas/día controladas · 66% reducción en part numbers CS2 · Reconocidos por GM por excelencia en inspección."},
+        {tier:"Tier 1 · Seating JIT", quote:"Scrap reducido 90% · Reconocidos por la planta como socio estratégico para asegurar JIT al OEM."},
+        {tier:"Tier 1 · Iluminación Automotriz", quote:"Cero claims del cliente desde el inicio del programa · Desviaciones contenidas antes del embarque."},
+        {tier:"Tier 1 · Seating US & MX", quote:"Quarantine reducida 90% en 8 plantas · Modelo replicado en EUA y México."},
+      ];
+
+      const TESTIMONIAL_PHOTOS = [
+        "assets/testimonial-01.jpg","assets/testimonial-02.jpg","assets/testimonial-03.jpg","assets/testimonial-04.jpg",
+        "assets/testimonial-05.jpg","assets/testimonial-06.jpg","assets/testimonial-07.jpg","assets/testimonial-08.jpg",
+        "assets/testimonial-09.jpg","assets/testimonial-10.jpg","assets/testimonial-11.jpg","assets/testimonial-12.jpg",
+        "assets/testimonial-13.jpg","assets/testimonial-14.jpg","assets/testimonial-15.jpg","assets/testimonial-16.jpg",
+      ];
+
+      const TESTIMONIALS = TESTIMONIAL_PHOTOS.map((photo, i) => ({ ...TESTIMONIAL_CONTENT[i % TESTIMONIAL_CONTENT.length], photo }));
+
+      const FAQS = [
+        {q:"¿En cuánto pueden arrancar?", a:"En menos de 48 horas para contención de calidad, con SLA contractual y mano de obra local. No dependemos de traer gente de otra ciudad."},
+        {q:"¿Podemos mejorar tu costo?", a:"El costo se adapta al SLA."},
+        {q:"¿Qué certificaciones tienen?", a:"ISO 9001:2015 (TÜV NORD desde 2018), REPSE, D-U-N-S, y somos 1 de 6 proveedores CS2 aprobados por GM a nivel nacional, proveedor autorizado de REPSE en México desde 2019 (lista del gobierno / El Economista)."},
+        {q:"¿Qué tan compleja es la transición si hoy lo llevo con otra sorteadora?", a:"Se diseña por fases para no poner en riesgo producción: primero contención y continuidad, luego estandarización con nuestra metodología, y finalmente visibilidad con ÁRBOL y KPIs en tiempo real."},
+        {q:"¿Operan en Estados Unidos?", a:"Sí. Tenemos operación activa en Texas, Michigan, California e Illinois. Ofrecemos quality liaison e ingenieros residentes bilingües para plantas OEM y Tier 1 en EUA."},
+        {q:"¿Pueden apoyar un PPAP o APQP que ya está en curso y atrasado?", a:"Sí. Entramos con un assessment de readiness, identificamos los elementos críticos faltantes (estudios dimensionales, MSA, Cp/Cpk, flujo, PFMEA, plan de control) y ejecutamos en paralelo para llegar a la fecha de sumisión con evidencia completa."},
+        {q:"¿Auditan a mis proveedores en su propia planta?", a:"Sí. Colocamos quality liaison Gemba en la planta del proveedor: auditoría, seguimiento de acciones correctivas, verificación de contención y reporte directo a tu equipo de SQD."},
+        {q:"¿Qué es una auditoría VDA 6.3 y cuándo la necesito?", a:"VDA 6.3 es la auditoría de proceso del estándar alemán automotriz, exigida típicamente por OEMs y Tier 1 alemanes. La necesitas antes de una nominación, ante hallazgos recurrentes de tu cliente, o para calificar y desarrollar proveedores. Nuestros auditores la ejecutan en planta propia o de proveedor, con reporte de hallazgos y plan de cierre."},
+      ];
+
+      const TRUST_CHIPS = [
+        {name:"Adient", src:"assets/logo-adient.webp"},
+        {name:"Aptiv", src:"assets/logo-aptiv.webp"},
+        {name:"Forvia", src:"assets/logo-forvia.webp"},
+        {name:"GM", src:"assets/logo-gm.png"},
+        {name:"John Deere", src:"assets/logo-john-deere.webp"},
+        {name:"Lear", src:"assets/logo-lear.webp"},
+        {name:"Mabe", src:"assets/logo-mabe.webp"},
+        {name:"Magna", src:"assets/logo-magna.webp"},
+        {name:"Martinrea", src:"assets/logo-martinrea.png"},
+      ];
+
+      const FORM_FIELDS = [
+        {label:"Tu nombre", placeholder:"Nombre completo", inputType:"text", isSelect:false, full:false},
+        {label:"Correo", placeholder:"correo@planta.com", inputType:"email", isSelect:false, full:false},
+        {label:"Teléfono", placeholder:"+52 55 0000 0000", inputType:"tel", isSelect:false, full:false},
+        {label:"Nombre de planta", placeholder:"Nombre de planta", inputType:"text", isSelect:false, full:false},
+        {label:"Ciudad", placeholder:"Ciudad", inputType:"text", isSelect:false, full:false},
+        {label:"Estado", placeholder:"Estado", inputType:"text", isSelect:false, full:false},
+        {label:"País", placeholder:"País", inputType:"text", isSelect:false, full:false},
+        {label:"Número de personas (por turno)", isSelect:true, full:true, options:["Menos de 12","De 1 a 5","A partir de 12","De 12 a 24","De 24 a 50"]},
+        {label:"Cuando quieres arrancar", isSelect:true, full:true, options:["Hoy o mañana","Este mes","De 1 a 3 meses","6 meses","No lo tengo claro"]},
+        {label:"¿Qué necesitas resolver?", isSelect:true, full:true, options:["Sorteo, inspección o retrabajo","CS2","Ingenieros residentes / Quality Liaison","Scrap crónico o productividad","PPAP / APQP","Otro"]},
+      ];
+
+      class Component extends DCLogic {
+        state = { openFaq: 0, navScrolled: false, activeUseCase: 0, useCasePlaying: true, activeFaq: 0, faqPlaying: true };
+
+        revealRef = (el) => {
+          if (!el || el.__lmObserved) return;
+          el.__lmObserved = true;
+          if (!this._io) {
+            this._io = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+                  this._io.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+          }
+          this._io.observe(el);
+        };
+
+        counterRef = (el) => {
+          if (!el || el.__lmCounted) return;
+          el.__lmCounted = true;
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                this.runCounter(entry.target);
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          io.observe(el);
+        };
+
+        runCounter(el) {
+          const raw = el.textContent.trim();
+          const m = raw.match(/[0-9][0-9,]*/);
+          if (!m) return;
+          const target = parseInt(m[0].replace(/,/g, ''), 10);
+          const hasComma = m[0].includes(',');
+          const prefix = raw.slice(0, m.index);
+          const suffix = raw.slice(m.index + m[0].length);
+          const dur = 1300;
+          const t0 = performance.now();
+          const tick = (now) => {
+            const p = Math.min(1, (now - t0) / dur);
+            const e = 1 - Math.pow(1 - p, 3);
+            const v = Math.round(target * e);
+            el.textContent = prefix + (hasComma ? v.toLocaleString('en-US') : String(v)) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
         }
-      });
-    }, { threshold: 0.5 });
-    io.observe(el);
-  };
 
-  runCounter(el) {
-    const raw = el.textContent.trim();
-    const m = raw.match(/[0-9][0-9,]*/);
-    if (!m) return;
-    const target = parseInt(m[0].replace(/,/g, ''), 10);
-    const hasComma = m[0].includes(',');
-    const prefix = raw.slice(0, m.index);
-    const suffix = raw.slice(m.index + m[0].length);
-    const dur = 1300;
-    const t0 = performance.now();
-    const tick = (now) => {
-      const p = Math.min(1, (now - t0) / dur);
-      const e = 1 - Math.pow(1 - p, 3);
-      const v = Math.round(target * e);
-      el.textContent = prefix + (hasComma ? v.toLocaleString('en-US') : String(v)) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
+        heroOrb1Ref = (el) => { this._orb1 = el; };
+        heroOrb2Ref = (el) => { this._orb2 = el; };
+        preventSubmit = (e) => { e.preventDefault(); };
+        toggleFaqIndex(i) { this.setState((s) => ({ openFaq: s.openFaq === i ? -1 : i })); }
 
-  heroOrb1Ref = (el) => { this._orb1 = el; };
-  heroOrb2Ref = (el) => { this._orb2 = el; };
-  preventSubmit = (e) => { e.preventDefault(); };
-  toggleFaqIndex(i) { this.setState((s) => ({ openFaq: s.openFaq === i ? -1 : i })); }
+        setFaq = (i) => { this.setState({ activeFaq: i }); this.restartFaqTimer(); };
+        toggleFaqPlaying = () => {
+          this.setState((s) => ({ faqPlaying: !s.faqPlaying }));
+        };
+        restartFaqTimer() {
+          if (this._faqTimer) clearInterval(this._faqTimer);
+          this._faqTimer = setInterval(() => {
+            if (!this.state.faqPlaying) return;
+            this.setState((s) => ({ activeFaq: (s.activeFaq + 1) % FAQS.length }));
+          }, 4200);
+        }
 
-  setFaq = (i) => { this.setState({ activeFaq: i }); this.restartFaqTimer(); };
-  toggleFaqPlaying = () => {
-    this.setState((s) => ({ faqPlaying: !s.faqPlaying }));
-  };
-  restartFaqTimer() {
-    if (this._faqTimer) clearInterval(this._faqTimer);
-    this._faqTimer = setInterval(() => {
-      if (!this.state.faqPlaying) return;
-      this.setState((s) => ({ activeFaq: (s.activeFaq + 1) % FAQS.length }));
-    }, 4200);
-  }
-
-  setUseCase = (i) => { this.setState({ activeUseCase: i }); this.restartUseCaseTimer(); };
-  toggleUseCasePlaying = () => {
-    this.setState((s) => ({ useCasePlaying: !s.useCasePlaying }));
-  };
-  restartUseCaseTimer() {
-    if (this._useCaseTimer) clearInterval(this._useCaseTimer);
-    this._useCaseTimer = setInterval(() => {
-      if (!this.state.useCasePlaying) return;
-      this.setState((s) => ({ activeUseCase: (s.activeUseCase + 1) % USE_CASES.length }));
-    }, 3000);
-  }
+        setUseCase = (i) => { this.setState({ activeUseCase: i }); this.restartUseCaseTimer(); };
+        toggleUseCasePlaying = () => {
+          this.setState((s) => ({ useCasePlaying: !s.useCasePlaying }));
+        };
+        restartUseCaseTimer() {
+          if (this._useCaseTimer) clearInterval(this._useCaseTimer);
+          this._useCaseTimer = setInterval(() => {
+            if (!this.state.useCasePlaying) return;
+            this.setState((s) => ({ activeUseCase: (s.activeUseCase + 1) % USE_CASES.length }));
+          }, 3000);
+        }
 
 
-  componentDidMount() {
-    this.restartUseCaseTimer();
-    this.restartFaqTimer();
-    this._onScroll = () => {
-      const y = window.scrollY;
-      const scrolled = y > 40;
-      if (scrolled !== this.state.navScrolled) this.setState({ navScrolled: scrolled });
-      if (this._orb1) this._orb1.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0)';
-      if (this._orb2) this._orb2.style.transform = 'translate3d(0,' + (-y * 0.08) + 'px,0)';
-    };
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-  }
+        componentDidMount() {
+          this.restartUseCaseTimer();
+          this.restartFaqTimer();
+          this._onScroll = () => {
+            const y = window.scrollY;
+            const scrolled = y > 40;
+            if (scrolled !== this.state.navScrolled) this.setState({ navScrolled: scrolled });
+            if (this._orb1) this._orb1.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0)';
+            if (this._orb2) this._orb2.style.transform = 'translate3d(0,' + (-y * 0.08) + 'px,0)';
+          };
+          window.addEventListener('scroll', this._onScroll, { passive: true });
+        }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this._onScroll);
-    if (this._io) this._io.disconnect();
-    if (this._useCaseTimer) clearInterval(this._useCaseTimer);
-    if (this._faqTimer) clearInterval(this._faqTimer);
-    if (this._resultTimer) clearInterval(this._resultTimer);
-  }
+        componentWillUnmount() {
+          window.removeEventListener('scroll', this._onScroll);
+          if (this._io) this._io.disconnect();
+          if (this._useCaseTimer) clearInterval(this._useCaseTimer);
+          if (this._faqTimer) clearInterval(this._faqTimer);
+          if (this._resultTimer) clearInterval(this._resultTimer);
+        }
 
-  renderVals() {
-    const mk = (arr) => arr.map((it, i) => ({
-      ...it,
-      delay: Math.min(i * 90, 360),
-      reveal: this.revealRef,
-      floatTop: ['10%', '32%', '54%'][i],
-      floatLeft: ['-150px', '-115px', '-150px'][i],
-      floatAnimDelay: (i * 0.5) + 's',
-    }));
-    const withGrid = (arr) => arr.map((f) => ({ ...f, gridColumn: f.full ? 'span 2' : 'span 1', isNotSelect: !f.isSelect }));
-    const faqs = FAQS.map((f, i) => ({
-      ...f,
-      i,
-      delay: Math.min(i * 60, 300),
-      reveal: this.revealRef,
-      isOpen: this.state.openFaq === i,
-      iconRotate: this.state.openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
-      openClass: this.state.openFaq === i ? 'lm-open' : '',
-      toggle: () => this.toggleFaqIndex(i),
-    }));
+        renderVals() {
+          const mk = (arr) => arr.map((it, i) => ({
+            ...it,
+            delay: Math.min(i * 90, 360),
+            reveal: this.revealRef,
+            floatTop: ['10%', '32%', '54%'][i],
+            floatLeft: ['-150px', '-115px', '-150px'][i],
+            floatAnimDelay: (i * 0.5) + 's',
+          }));
+          const withGrid = (arr) => arr.map((f) => ({ ...f, gridColumn: f.full ? 'span 2' : 'span 1', isNotSelect: !f.isSelect }));
+          const faqs = FAQS.map((f, i) => ({
+            ...f,
+            i,
+            delay: Math.min(i * 60, 300),
+            reveal: this.revealRef,
+            isOpen: this.state.openFaq === i,
+            iconRotate: this.state.openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
+            openClass: this.state.openFaq === i ? 'lm-open' : '',
+            toggle: () => this.toggleFaqIndex(i),
+          }));
 
-    return {
-      revealRef: this.revealRef,
-      counterRef: this.counterRef,
-      heroOrb1Ref: this.heroOrb1Ref,
-      heroOrb2Ref: this.heroOrb2Ref,
-      preventSubmit: this.preventSubmit,
-      services: mk(SERVICES),
-      useCases: mk(USE_CASES),
-      approachPills: APPROACH.map((it, i) => ({ ...it, pillTop: ['10%', '44%', '78%'][i], pillRight: ['-30px', '-50px', '-20px'][i] })),
-      useCaseSteps: USE_CASES.map((it, i) => ({
-        n: String(i + 1).padStart(2, '0'),
-        short: it.short,
-        isActive: this.state.activeUseCase === i,
-        circleBg: this.state.activeUseCase === i ? '#152355' : '#FFFFFF',
-        circleColor: this.state.activeUseCase === i ? '#F4C81C' : '#8A8C8E',
-        circleBorder: this.state.activeUseCase === i ? '#152355' : '#E1E2E4',
-        labelColor: this.state.activeUseCase === i ? '#152355' : '#8A8C8E',
-        select: () => this.setUseCase(i),
-      })),
-      activeUseCaseData: (() => {
-        const it = USE_CASES[this.state.activeUseCase];
-        return { ...it, n: String(this.state.activeUseCase + 1).padStart(2, '0') };
-      })(),
-      useCasePosLabel: (this.state.activeUseCase + 1) + ' / ' + String(USE_CASES.length).padStart(2, '0') + ' · CASOS DE USO',
-      useCaseProgress: ((this.state.activeUseCase + 1) / USE_CASES.length * 100) + '%',
-      useCasePlaying: this.state.useCasePlaying,
-      useCasePlayLabel: this.state.useCasePlaying ? '❙❙ Pausar' : '► Reanudar',
-      toggleUseCasePlaying: this.toggleUseCasePlaying,
-      faqSteps: FAQS.map((it, i) => ({
-        n: String(i + 1).padStart(2, '0'),
-        short: ['Arranque','Costo','Certificaciones','Transición','EUA','PPAP / APQP','Proveedores','VDA 6.3'][i],
-        isActive: this.state.activeFaq === i,
-        select: () => this.setFaq(i),
-      })),
-      activeFaqData: (() => {
-        const it = FAQS[this.state.activeFaq];
-        return { ...it, n: String(this.state.activeFaq + 1).padStart(2, '0') };
-      })(),
-      faqProgress: ((this.state.activeFaq + 1) / FAQS.length * 100) + '%',
-      faqPlaying: this.state.faqPlaying,
-      faqPlayLabel: this.state.faqPlaying ? '❙❙ Pausar' : '► Reanudar',
-      toggleFaqPlaying: this.toggleFaqPlaying,
-      processPhases: mk(PROCESS_PHASES),
-      approach: mk(APPROACH),
-      results: mk(RESULTS),
-      testimonialsRow1: [...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r1-' + i })),
-      testimonialsRow2: [...TESTIMONIALS.slice().reverse(), ...TESTIMONIALS.slice().reverse()].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r2-' + i })),
-      trustChips: TRUST_CHIPS,
-      trustChipsLoop: [...TRUST_CHIPS, ...TRUST_CHIPS],
-      faqs,
-      formFields: withGrid(FORM_FIELDS),
-    };
-  }
-}
-
-</script>
-</body>
+          return {
+            revealRef: this.revealRef,
+            counterRef: this.counterRef,
+            heroOrb1Ref: this.heroOrb1Ref,
+            heroOrb2Ref: this.heroOrb2Ref,
+            preventSubmit: this.preventSubmit,
+            services: mk(SERVICES),
+            useCases: mk(USE_CASES),
+            approachPills: APPROACH.map((it, i) => ({ ...it, pillTop: ['10%', '44%', '78%'][i], pillRight: ['-30px', '-50px', '-20px'][i] })),
+            useCaseSteps: USE_CASES.map((it, i) => ({
+              n: String(i + 1).padStart(2, '0'),
+              short: it.short,
+              isActive: this.state.activeUseCase === i,
+              circleBg: this.state.activeUseCase === i ? '#152355' : '#FFFFFF',
+              circleColor: this.state.activeUseCase === i ? '#F4C81C' : '#8A8C8E',
+              circleBorder: this.state.activeUseCase === i ? '#152355' : '#E1E2E4',
+              labelColor: this.state.activeUseCase === i ? '#152355' : '#8A8C8E',
+              select: () => this.setUseCase(i),
+            })),
+            activeUseCaseData: (() => {
+              const it = USE_CASES[this.state.activeUseCase];
+              return { ...it, n: String(this.state.activeUseCase + 1).padStart(2, '0') };
+            })(),
+            useCasePosLabel: (this.state.activeUseCase + 1) + ' / ' + String(USE_CASES.length).padStart(2, '0') + ' · CASOS DE USO',
+            useCaseProgress: ((this.state.activeUseCase + 1) / USE_CASES.length * 100) + '%',
+            useCasePlaying: this.state.useCasePlaying,
+            useCasePlayLabel: this.state.useCasePlaying ? '❙❙ Pausar' : '► Reanudar',
+            toggleUseCasePlaying: this.toggleUseCasePlaying,
+            faqSteps: FAQS.map((it, i) => ({
+              n: String(i + 1).padStart(2, '0'),
+              short: ['Arranque','Costo','Certificaciones','Transición','EUA','PPAP / APQP','Proveedores','VDA 6.3'][i],
+              isActive: this.state.activeFaq === i,
+              select: () => this.setFaq(i),
+            })),
+            activeFaqData: (() => {
+              const it = FAQS[this.state.activeFaq];
+              return { ...it, n: String(this.state.activeFaq + 1).padStart(2, '0') };
+            })(),
+            faqProgress: ((this.state.activeFaq + 1) / FAQS.length * 100) + '%',
+            faqPlaying: this.state.faqPlaying,
+            faqPlayLabel: this.state.faqPlaying ? '❙❙ Pausar' : '► Reanudar',
+            toggleFaqPlaying: this.toggleFaqPlaying,
+            processPhases: mk(PROCESS_PHASES),
+            approach: mk(APPROACH),
+            results: mk(RESULTS),
+            testimonialsRow1: [...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r1-' + i })),
+            testimonialsRow2: [...TESTIMONIALS.slice().reverse(), ...TESTIMONIALS.slice().reverse()].map((t, i) => ({ ...t, avatarId: 'lm-avatar-r2-' + i })),
+            trustChips: TRUST_CHIPS,
+            trustChipsLoop: [...TRUST_CHIPS, ...TRUST_CHIPS],
+            faqs,
+            formFields: withGrid(FORM_FIELDS),
+          };
+        }
+      }
+    </script>
+  </body>
 </html>

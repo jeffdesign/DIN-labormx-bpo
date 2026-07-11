@@ -55,7 +55,8 @@
     const text=el.textContent.trim(); if(!text) return;
     el.setAttribute('aria-label',text); el.innerHTML='';
     const words=text.split(/\s+/);words.forEach((word,i)=>{const s=document.createElement('span');s.className='lm-word';const clean=word.toLowerCase().replace(/[^a-záéíóúüñ0-9]/g,'');if(['48','sla','calidad','estructura','resultados'].includes(clean)||((i>0)&&words[i-1].replace(/[^0-9]/g,'')==='48'))s.classList.add('lm-accent-word');s.style.setProperty('--i',i);s.textContent=word;el.appendChild(s)});
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('lm-heading-visible');io.unobserve(e.target)}}),{threshold:.35});io.observe(el);
+    el.addEventListener('animationend',ev=>{if(ev.target.classList.contains('lm-word'))ev.target.style.willChange='auto'},{passive:true});
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.lm-word').forEach(w=>w.style.willChange='transform,opacity,filter');e.target.classList.add('lm-heading-visible');io.unobserve(e.target)}}),{threshold:.35});io.observe(el);
   }
   function initHeadings(){
     $$('h1, section h2').forEach(splitHeading);
@@ -155,7 +156,7 @@
   function initCursor(){
     if(reduced||matchMedia('(pointer:coarse)').matches)return;const dot=document.createElement('div'),ring=document.createElement('div');dot.className='lm-cursor-dot';ring.className='lm-cursor-ring';document.body.append(dot,ring);let x=0,y=0,rx=0,ry=0;
     addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;dot.style.transform=`translate(${x-3}px,${y-3}px)`;document.body.classList.add('lm-cursor-ready')});
-    const loop=()=>{rx+=(x-rx)*.18;ry+=(y-ry)*.18;ring.style.transform=`translate(${rx-17}px,${ry-17}px) scale(${ring.classList.contains('lm-hover')?1.55:1})`;requestAnimationFrame(loop)};loop();
+    const loop=()=>{rx+=(x-rx)*.35;ry+=(y-ry)*.35;ring.style.transform=`translate(${rx-17}px,${ry-17}px) scale(${ring.classList.contains('lm-hover')?1.55:1})`;requestAnimationFrame(loop)};loop();
     document.addEventListener('mouseover',e=>{if(e.target.closest('a,button,input,select,textarea,.lm-tilt-card'))ring.classList.add('lm-hover')});document.addEventListener('mouseout',e=>{if(e.target.closest('a,button,input,select,textarea,.lm-tilt-card'))ring.classList.remove('lm-hover')});
   }
 
@@ -179,7 +180,7 @@
           <img src="assets/logo-white.png" alt="Labor Mexicana" width="240" height="61">
           <p class="lm-modal-eyebrow">Respuesta en menos de 24 horas</p>
           <h2 id="lm-modal-title">Agenda una llamada</h2>
-          <p>Cuéntanos tu situación y un ingeniero de calidad te contactará para validar el siguiente paso.</p>
+          <p>Cuéntanos tu situación y un ingeniero de calidad te contactará en breve.</p>
         </div>
         <div class="lm-modal-side-proof" aria-label="Características del servicio">
           <span><i>✓</i> Activación en menos de 48 horas</span>
@@ -199,9 +200,14 @@
             <p class="lm-step-intro">Comparte tus datos para que podamos revisar tu caso.</p>
             <div class="lm-field-grid lm-field-grid-two">
               <label class="lm-field"><span>Tu nombre</span><input name="name" autocomplete="name" required placeholder="Nombre completo"></label>
-              <label class="lm-field"><span>Correo corporativo</span><input name="email" type="email" autocomplete="email" required placeholder="correo@empresa.com" data-corporate-email><small data-email-error></small></label>
+              <label class="lm-field"><span>Correo</span><input name="email" type="email" autocomplete="email" required placeholder="correo@empresa.com" data-corporate-email><small data-email-error></small></label>
               <label class="lm-field"><span>Teléfono</span><input name="phone" type="tel" autocomplete="tel" required placeholder="+52 55 0000 0000"></label>
-              <label class="lm-field"><span>Empresa / planta</span><input name="company" autocomplete="organization" required placeholder="Nombre de empresa"></label>
+              <label class="lm-field"><span>Nombre de planta</span><input name="company" autocomplete="organization" required placeholder="Nombre de planta"></label>
+            </div>
+            <div class="lm-field-grid lm-field-grid-three">
+              <label class="lm-field"><span>Ciudad</span><input name="city" autocomplete="address-level2" required placeholder="Ciudad"></label>
+              <label class="lm-field"><span>Estado</span><input name="state" autocomplete="address-level1" required placeholder="Estado"></label>
+              <label class="lm-field"><span>País</span><input name="country" autocomplete="country-name" required placeholder="País"></label>
             </div>
             <div class="lm-form-actions lm-form-actions-end">
               <button class="lm-form-button lm-form-button-primary lm-cta" type="button" data-next-step>Continuar <span aria-hidden="true">→</span></button>
@@ -210,16 +216,18 @@
           <div class="lm-form-step" data-step="2" hidden>
             <h3>Cuéntanos el reto</h3>
             <p class="lm-step-intro">Ayúdanos a identificar el siguiente paso para tu operación.</p>
-            <div class="lm-field-grid lm-field-grid-two">
-              <label class="lm-field"><span>¿Cuándo necesitas arrancar?</span><select name="start" required><option value="">Selecciona una opción</option><option>Hoy o mañana</option><option>Este mes</option><option>De 1 a 3 meses</option><option>No lo tengo claro</option></select></label>
-              <label class="lm-field"><span>¿Qué necesitas resolver?</span><select name="need" required><option value="">Selecciona una opción</option><option>Contención / sorteo</option><option>CS2</option><option>Quality Liaison</option><option>Scrap crónico</option><option>PPAP / APQP</option><option>Otro</option></select></label>
-              <label class="lm-field lm-field-full"><span>Contexto</span><textarea name="context" rows="5" placeholder="Describe brevemente el reto de calidad"></textarea></label>
+            <div class="lm-field-grid">
+              <label class="lm-field"><span>Número de personas (por turno)</span><select name="headcount" required><option value="">Selecciona una opción</option><option>A partir de 12</option><option>Menos de 12</option><option>De 1 a 5</option><option>De 12 a 24</option><option>De 24 a 50</option></select></label>
+              <label class="lm-field"><span>Cuando quieres arrancar</span><select name="start" required><option value="">Selecciona una opción</option><option>Hoy o mañana</option><option>Este mes</option><option>De 1 a 3 meses</option><option>6 meses</option><option>No lo tengo claro</option></select></label>
+              <label class="lm-field"><span>¿Qué necesitas resolver?</span><select name="need" required><option value="">Selecciona una opción</option><option>Sorteo, inspección o retrabajo</option><option>CS2</option><option>Ingenieros residentes / Quality Liaison</option><option>Scrap crónico o productividad</option><option>PPAP / APQP</option><option>Otro</option></select></label>
             </div>
+            <label class="lm-field-checkbox"><input type="checkbox" name="privacy" required>Acepto el aviso de privacidad y autorizo el contacto sobre mi solicitud.</label>
             <div class="lm-form-error" role="status" aria-live="polite"></div>
             <div class="lm-form-actions lm-form-actions-split">
               <button class="lm-form-button lm-form-button-secondary" type="button" data-prev-step>← Regresar</button>
-              <button class="lm-form-button lm-form-button-primary lm-cta" type="submit" data-submit-button>Agendar llamada <span aria-hidden="true">↗</span></button>
+              <button class="lm-form-button lm-form-button-primary lm-cta" type="submit" data-submit-button>Agendar llamada <span aria-hidden="true">→</span></button>
             </div>
+            <p class="lm-step-footnote">Visita de diagnóstico sin costo · Sin compromiso</p>
           </div>
         </form>
       </div>
